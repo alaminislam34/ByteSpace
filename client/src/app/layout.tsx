@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { type ReactNode } from "react";
 import { poppins } from "./fonts";
 import { Providers } from "@/providers";
-import { Footer } from "@/components/layout";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,10 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <link rel="stylesheet" href={satoshiHref} />
       </head>
       <body className="min-h-full font-body bg-[#003be2] text-white">
-        <Providers>
-          {children}
-          <Footer />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

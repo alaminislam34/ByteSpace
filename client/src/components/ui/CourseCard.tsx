@@ -26,6 +26,8 @@ export interface CourseCardProps {
   extraStudentsCount?: string;
   price: number;
   className?: string;
+  starClassName?: string;
+  statClassName?: string;
 }
 
 const LevelIcon: FC = () => (
@@ -50,6 +52,8 @@ export const CourseCard: FC<CourseCardProps> = ({
   extraStudentsCount = "26+",
   price,
   className,
+  starClassName = "text-[#CED0D3]",
+  statClassName,
 }) => {
   const stats = [`${lessons} Lessons`, duration, `${comments} Comments`];
 
@@ -75,7 +79,10 @@ export const CourseCard: FC<CourseCardProps> = ({
             <span
               key={stat}
               title={stat}
-              className="rounded-full truncate bg-[#F6F6F6]/60 backdrop-blur-sm px-3 py-1.5 text-[12px] font-medium leading-none text-[#4F4F4F]"
+              className={cn(
+                "rounded-full truncate bg-[#F6F6F6]/60 backdrop-blur-sm px-3 py-1.5 text-[12px] font-medium leading-none text-[#4F4F4F]",
+                statClassName
+              )}
             >
               {stat}
             </span>
@@ -90,7 +97,7 @@ export const CourseCard: FC<CourseCardProps> = ({
           </h3>
           <div className="flex shrink-0 items-center gap-1 text-lg font-medium leading-[160%] text-[#4F4F4F]">
             <span>{rating.toFixed(1)}</span>
-            <FaStar className="size-5 text-[#CED0D3]" />
+            <FaStar className={cn("size-5", starClassName)} />
           </div>
         </div>
 

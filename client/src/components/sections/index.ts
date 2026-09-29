@@ -5,3 +5,4 @@ export * from "./LearningPath";
 export * from "./ProfessionalGrowth";
 export * from "./CreatorBanner";
 export * from "./Testimonials";
+export * from "./CourseCatalog";

@@ -9,6 +9,7 @@ export * from "./SectionHeader";
 export * from "./SectionWrapper";
 export * from "./Spinner";
 export * from "./CategoryPill";
+export * from "./FilterDropdown";
 export * from "./CourseCard";
 export * from "./MetricCard";
 export * from "./TestimonialCard";

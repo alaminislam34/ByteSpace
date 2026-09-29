@@ -42,7 +42,7 @@ export const Footer: FC = () => {
   return (
     <footer className="bg-white text-[#12141A]">
       <div className="mx-auto w-11/12 py-14 lg:w-10/12 lg:py-20">
-        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.15fr)] lg:gap-20">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(34rem,1.05fr)] lg:gap-12">
           <div>
             <Link href="/" className="inline-flex items-center gap-2">
               <Image
@@ -57,7 +57,7 @@ export const Footer: FC = () => {
               </span>
             </Link>
 
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-[#5C6370]">
+            <p className="mt-5 text-sm leading-relaxed text-[#5C6370]">
               Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
 
@@ -83,7 +83,7 @@ export const Footer: FC = () => {
               </button>
             </form>
 
-            <p className="mt-5 max-w-md text-[13px] leading-relaxed text-[#8A9099]">
+            <p className="mt-5 text-[13px] leading-relaxed text-[#8A9099]">
               By subscribing, you agree to our{" "}
               <Link href="/privacy" className="underline underline-offset-2">
                 Privacy Policy
@@ -94,12 +94,12 @@ export const Footer: FC = () => {
 
           <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:pt-1">
             {LINK_COLUMNS.map((column) => (
-              <ul key={column[0].label} className="flex flex-col gap-4">
+              <ul key={column[0].label} className="flex flex-col gap-5">
                 {column.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-[15px] font-medium text-[#1A1C21] transition-colors hover:text-[#003BE2]"
+                      className="whitespace-nowrap text-[15px] font-medium text-[#1A1C21] transition-colors hover:text-[#003BE2]"
                     >
                       {link.label}
                     </Link>

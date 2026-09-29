@@ -2,28 +2,7 @@
 
 import { useState, type FC } from "react";
 import { SectionHeader, CategoryPill, CourseCard } from "@/components/ui";
-import { courses } from "@/data/courses";
-
-const CATEGORIES = [
-  "Featured",
-  "Music",
-  "Drawing & Painting",
-  "Marketing",
-  "Animation",
-  "Social Media",
-  "UI/UX Design",
-  "Creative Marketing",
-  "Digital Illustration",
-  "Film & Video",
-  "Crafts",
-  "Freelance & Entrepreneurship",
-  "Graphic Design",
-  "Photography",
-  "Productivity",
-  "Web Development",
-  "Data Science",
-  "Cooking",
-];
+import { courses, courseCategories as CATEGORIES } from "@/data/courses";
 
 export const CoursesSection: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("Featured");
