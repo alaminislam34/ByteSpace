@@ -16,7 +16,7 @@ export const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative z-30 w-full h-30 border flex items-center">
+    <header className="relative z-30 w-full h-20 md:h-25 lg:h-30 flex items-center">
       <div className="mx-auto flex w-10/12 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5 pb-3">
           <Image
@@ -32,12 +32,12 @@ export const Navbar = () => {
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-9 transition-colors">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className={cn("text-sm hover:font-semibold hover:scale-102 duration-300 font-medium text-white/90 hover:text-white transition-colors", "font-title")}
+              className={cn("text-sm hover:font-semibold duration-300 font-medium text-white/90 hover:text-white ", "")}
             >
               {item.label}
             </Link>

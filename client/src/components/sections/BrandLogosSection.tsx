@@ -3,8 +3,8 @@ import { BrandLogos } from "@/components/ui";
 
 export const BrandLogosSection: FC = () => {
   return (
-    <section className="w-full bg-surface-light border-y border-shuttle-100">
-      <div className="mx-auto w-11/12">
+    <section className="w-full bg-[#F5F5F5]">
+      <div className="mx-auto w-10/12 py-14">
         <BrandLogos />
       </div>
     </section>

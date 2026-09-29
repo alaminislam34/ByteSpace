@@ -3,6 +3,10 @@ import {
   HeroSection,
   BrandLogosSection,
   CoursesSection,
+  LearningPath,
+  ProfessionalGrowth,
+  CreatorBanner,
+  Testimonials,
 } from "@/components/sections";
 
 const HomePage: FC = () => {
@@ -11,6 +15,10 @@ const HomePage: FC = () => {
       <HeroSection />
       <BrandLogosSection />
       <CoursesSection />
+      <LearningPath />
+      <ProfessionalGrowth />
+      <Testimonials />
+      <CreatorBanner />
     </main>
   );
 };

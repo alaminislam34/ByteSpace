@@ -2,6 +2,7 @@
 
 import { useState, type FC } from "react";
 import { SectionHeader, CategoryPill, CourseCard } from "@/components/ui";
+import { courses } from "@/data/courses";
 
 const CATEGORIES = [
   "Featured",
@@ -24,60 +25,22 @@ const CATEGORIES = [
   "Cooking",
 ];
 
-const COURSES = [
-  {
-    id: "figma-basic",
-    title: "Learn Figma from Basic",
-    author: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image:
-      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "digital-asset",
-    title: "Build Digital Asset",
-    author: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image:
-      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    id: "power-big-data",
-    title: "the Power of Big Data",
-    author: "purepearl studio",
-    rating: 4.5,
-    lessons: 17,
-    duration: "2 hours 16 mins",
-    comments: 59,
-    level: "Beginner",
-    price: 25,
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-  },
-];
-
 export const CoursesSection: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("Featured");
+  const visibleCourses =
+    selectedCategory === "Featured"
+      ? courses.filter((course) => course.featured)
+      : courses.filter((course) => course.category === selectedCategory);
 
   return (
     <section className="w-full bg-white py-20 lg:py-28 text-foreground">
-      <div className="mx-auto w-11/12 lg:w-10/12 flex flex-col gap-12">
+      <div className="mx-auto w-11/12 lg:w-10/12 flex flex-col gap-10.5">
         <SectionHeader
-          title="Discover Your Passion, Build Your Skills"
+          title={"Discover Your Passion,\nBuild Your Skills"}
           description="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
         />
 
-        <div className="flex flex-wrap items-center justify-center gap-2.5 max-w-5xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-4 max-w-5xl px-2 mx-auto">
           {CATEGORIES.map((cat) => (
             <CategoryPill
               key={cat}
@@ -94,11 +57,15 @@ export const CoursesSection: FC = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-          {COURSES.map((course) => (
-            <CourseCard key={course.id} {...course} />
-          ))}
-        </div>
+        {visibleCourses.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+            {visibleCourses.map((course) => (
+              <CourseCard key={course.id} href={`/courses/${course.id}`} {...course} />
+            ))}
+          </div>
+        ) : (
+          <p className="pt-4 text-center text-[#82868E]">No courses in this category yet.</p>
+        )}
       </div>
     </section>
   );

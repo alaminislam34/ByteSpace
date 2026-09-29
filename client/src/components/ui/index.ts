@@ -1,4 +1,6 @@
 export * from "./Button";
+export * from "./SearchField";
+export * from "./HeroStatCards";
 export * from "./AppLink";
 export * from "./Card";
 export * from "./Badge";
@@ -8,4 +10,6 @@ export * from "./SectionWrapper";
 export * from "./Spinner";
 export * from "./CategoryPill";
 export * from "./CourseCard";
+export * from "./MetricCard";
+export * from "./TestimonialCard";
 export * from "./BrandLogos";

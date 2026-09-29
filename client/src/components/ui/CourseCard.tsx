@@ -1,9 +1,19 @@
 import { type FC } from "react";
 import Image from "next/image";
-import { Star, BarChart2 } from "lucide-react";
+import Link from "next/link";
+import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { FaStar } from "react-icons/fa";
+
+const STUDENT_AVATARS = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80",
+  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=96&h=96&q=80",
+  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=96&h=96&q=80",
+  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&h=96&q=80",
+];
 
 export interface CourseCardProps {
+  href: string;
   image: string;
   title: string;
   author: string;
@@ -18,7 +28,16 @@ export interface CourseCardProps {
   className?: string;
 }
 
+const LevelIcon: FC = () => (
+  <svg viewBox="0 0 16 16" className="size-3.5 shrink-0" aria-hidden="true">
+    <rect x="1.5" y="9" width="2.4" height="5" rx="0.6" fill="currentColor" />
+    <rect x="6.8" y="6" width="2.4" height="8" rx="0.6" fill="currentColor" />
+    <rect x="12.1" y="2.5" width="2.4" height="11.5" rx="0.6" fill="currentColor" />
+  </svg>
+);
+
 export const CourseCard: FC<CourseCardProps> = ({
+  href,
   image,
   title,
   author,
@@ -27,81 +46,88 @@ export const CourseCard: FC<CourseCardProps> = ({
   duration,
   comments,
   level = "Beginner",
+  studentAvatars = STUDENT_AVATARS,
   extraStudentsCount = "26+",
   price,
   className,
 }) => {
+  const stats = [`${lessons} Lessons`, duration, `${comments} Comments`];
+
   return (
-    <article
+    <Link
+      href={href}
       className={cn(
-        "group flex flex-col rounded-3xl bg-surface-pure p-4 border border-border/80 shadow-xs",
-        "transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-shuttle-200",
+        "group flex flex-col rounded-3xl border border-[#E6E7EA] bg-white p-3.5",
+        "transition-shadow duration-300 hover:shadow-[0_12px_32px_rgba(11,15,25,0.08)]",
         className
       )}
     >
-      <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl bg-shuttle-100">
+      <div className="relative aspect-16/10 w-full overflow-hidden rounded-[18px] bg-[#F3F4F6]">
         <Image
           src={image}
           alt={title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover"
         />
-        <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-1.5 text-[11px] font-medium text-white">
-          <span className="rounded-full bg-black/45 backdrop-blur-md px-2.5 py-1">
-            {lessons} Lessons
-          </span>
-          <span className="rounded-full bg-black/45 backdrop-blur-md px-2.5 py-1">
-            {duration}
-          </span>
-          <span className="rounded-full bg-black/45 backdrop-blur-md px-2.5 py-1">
-            {comments} Comments
-          </span>
+        <div className="absolute inset-x-3 bottom-3 flex items-center justify-between gap-2">
+          {stats.map((stat) => (
+            <span
+              key={stat}
+              title={stat}
+              className="rounded-full truncate bg-[#F6F6F6]/60 backdrop-blur-sm px-3 py-1.5 text-[12px] font-medium leading-none text-[#4F4F4F]"
+            >
+              {stat}
+            </span>
+          ))}
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 pt-4">
-        <div className="flex items-center justify-between gap-2">
-          <h3 className="font-title text-lg font-bold text-[#0B0F19] tracking-tight group-hover:text-secondary transition-colors line-clamp-1">
+      <div className="flex flex-col px-1.5 pt-4 pb-2 space-y-4">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-poppins text-lg font-semibold leading-7 tracking-[-1%] text-[#000000]">
             {title}
           </h3>
-          <div className="flex items-center gap-1 text-sm font-semibold text-[#0B0F19]">
+          <div className="flex shrink-0 items-center gap-1 text-lg font-medium leading-[160%] text-[#4F4F4F]">
             <span>{rating.toFixed(1)}</span>
-            <Star className="size-3.5 fill-amber-400 text-amber-400" />
+            <FaStar className="size-5 text-[#CED0D3]" />
           </div>
         </div>
 
-        <p className="text-xs text-secondary font-medium">
-          by <span className="hover:underline">{author}</span>
+        <p className="text-xs leading-[160%] text-[#4F4F4F]">
+          by <span className="text-[#003BE2]">{author}</span>
         </p>
 
-        <div className="flex items-center justify-between pt-1">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-surface-light px-2.5 py-1 text-xs font-medium text-foreground/80">
-            <BarChart2 className="size-3.5 text-shuttle-400" />
-            <span>{level}</span>
-          </div>
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F2F3F5] px-3 py-1.5 text-[14px] font-medium text-[#4B5160]">
+            <LevelIcon />
+            {level}
+          </span>
 
-          <div className="flex items-center -space-x-1.5">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="size-6 rounded-full border-2 border-white bg-shuttle-200 overflow-hidden relative"
+          <div className="flex items-center">
+            {studentAvatars.slice(0, 4).map((src, index) => (
+              <span
+                key={src}
+                className={cn(
+                  "relative size-8 overflow-hidden rounded-full ring-2 ring-white",
+                  index > 0 && "-ml-2.5"
+                )}
+                style={{ zIndex: index + 1 }}
               >
-                <div className="size-full bg-linear-to-tr from-slate-400 to-slate-200" />
-              </div>
+                <Image src={src} alt="" width={32} height={32} className="size-full object-cover" />
+              </span>
             ))}
-            <span className="flex size-6 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground border-2 border-white">
+            <span className="relative z-10 -ml-2.5 flex size-8 items-center justify-center rounded-full bg-[#D4FB20] text-[11px] font-bold text-[#1A1C20] ring-2 ring-white">
               {extraStudentsCount}
             </span>
           </div>
         </div>
 
-        <div className="pt-2 border-t border-border/70 flex items-baseline gap-1">
-          <span className="font-title text-xl font-bold text-secondary">
-            ${price}
-          </span>
-          <span className="text-xs text-shuttle-400 font-normal">/lifetime</span>
-        </div>
+        <p className="">
+          <span className="text-xl font-poppins font-semibold text-[#003BE2]">${price}</span>
+          <span className="text-xs leading-[160%] text-[#4F4F4F]">/lifetime</span>
+        </p>
       </div>
-    </article>
+    </Link>
   );
 };

@@ -1,3 +1,7 @@
 export * from "./HeroSection";
 export * from "./BrandLogosSection";
 export * from "./CoursesSection";
+export * from "./LearningPath";
+export * from "./ProfessionalGrowth";
+export * from "./CreatorBanner";
+export * from "./Testimonials";

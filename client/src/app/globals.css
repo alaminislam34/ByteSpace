@@ -1,18 +1,18 @@
-@import url("https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700,900&display=swap");
 @import "tailwindcss";
 
 :root {
   --font-clash: "Clash Display", sans-serif;
   --font-satoshi: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-poppins: var(--font-poppins, "Poppins", sans-serif);
 }
 
-@theme {
+@theme inline {
   --font-title: var(--font-clash);
   --font-clash: var(--font-clash);
   --font-body: var(--font-satoshi);
-  --font-poppins: var(--font-poppins);
+  --font-poppins: var(--font-poppins), sans-serif;
+}
 
+@theme {
   --color-primary: #cbfc01;
   --color-primary-hover: #b8e600;
   --color-primary-foreground: #0b0f19;
@@ -57,19 +57,71 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-clash);
+@keyframes hero-float {
+  0% { transform: translate3d(0, 0, 0); }
+  10% { transform: translate3d(0, -7.05px, 0); }
+  20% { transform: translate3d(0, -11.41px, 0); }
+  30% { transform: translate3d(0, -11.41px, 0); }
+  40% { transform: translate3d(0, -7.05px, 0); }
+  50% { transform: translate3d(0, 0, 0); }
+  60% { transform: translate3d(0, 7.05px, 0); }
+  70% { transform: translate3d(0, 11.41px, 0); }
+  80% { transform: translate3d(0, 11.41px, 0); }
+  90% { transform: translate3d(0, 7.05px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes hero-float-alt {
+  0% { transform: translate3d(0, 0, 0); }
+  10% { transform: translate3d(0, 7.05px, 0); }
+  20% { transform: translate3d(0, 11.41px, 0); }
+  30% { transform: translate3d(0, 11.41px, 0); }
+  40% { transform: translate3d(0, 7.05px, 0); }
+  50% { transform: translate3d(0, 0, 0); }
+  60% { transform: translate3d(0, -7.05px, 0); }
+  70% { transform: translate3d(0, -11.41px, 0); }
+  80% { transform: translate3d(0, -11.41px, 0); }
+  90% { transform: translate3d(0, -7.05px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.hero-float,
+.hero-float-alt {
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.hero-float {
+  animation-name: hero-float;
+  animation-duration: 12s;
+}
+
+.hero-float-alt {
+  animation-name: hero-float-alt;
+  animation-duration: 14s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-float,
+  .hero-float-alt {
+    animation: none;
+  }
 }
 
 .bg-hero-grid {
+  container-type: inline-size;
+  position: relative;
   background-color: #003be2;
+}
+
+.bg-hero-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: 80px 80px;
+  background-size: calc(100cqw / 12) calc(100cqw / 12);
 }
