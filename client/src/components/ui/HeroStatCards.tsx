@@ -19,9 +19,9 @@ export const LearningProgressCard: FC<{ className?: string; value?: number }> = 
   className,
   value = 55,
 }) => (
-  <article className={cn("relative p-4 rounded-2xl bg-white backdrop-blur-lg min-w-58 space-y-2", CARD_RADIUS, CARD_BG, className)}>
-    <p className="text-sm font-medium leading-[120%]">Learning Progress</p>
-    <p className="font-poppins text-[48px] font-semibold leading-[120%] tracking-[-1%]">{value}%</p>
+  <article className={cn("relative p-4 rounded-2xl bg-white backdrop-blur-lg w-40 min-w-48 space-y-2", CARD_RADIUS, CARD_BG, className)}>
+    <p className="text-xs lg:text-sm font-medium leading-[120%]">Learning Progress</p>
+    <p className="font-poppins text-[30px] lg:text-[48px] font-semibold leading-[120%] tracking-[-1%]">{value}%</p>
     <div
       className="h-2 overflow-hidden rounded-full bg-[#F6F6F6]"
       role="progressbar"
