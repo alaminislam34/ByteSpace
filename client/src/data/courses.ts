@@ -13,6 +13,32 @@ export interface Course {
   featured?: boolean;
 }
 
+export interface Creator {
+  id: string;
+  name: string;
+  badge: string;
+  role: string;
+  bio1: string;
+  bio2: string;
+  productsCount: number;
+  followersCount: number;
+  avatar: string;
+}
+
+export const creators: Creator[] = [
+  {
+    id: "purepearl-studio",
+    name: "PurePearl Studio",
+    badge: "Creator",
+    role: "Passionate UI/UX, Web designer",
+    bio1: "Welcome to the creative world of PurePearl Studio. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together!",
+    bio2: "Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.",
+    productsCount: 3,
+    followersCount: 12,
+    avatar: "/images/creator-pearl.png",
+  },
+];
+
 export const courses: Course[] = [
   {
     id: "figma-basic",
@@ -33,11 +59,11 @@ export const courses: Course[] = [
     id: "digital-asset",
     title: "Build Digital Asset",
     author: "purepearl studio",
-    rating: 4.8,
-    lessons: 112,
-    duration: "24 hours",
-    comments: 86,
-    level: "Intermediate",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
     price: 25,
     category: "Graphic Design",
     featured: true,
@@ -46,18 +72,63 @@ export const courses: Course[] = [
   },
   {
     id: "power-big-data",
-    title: "The Power of Big Data",
+    title: "the Power of Big Data",
     author: "purepearl studio",
-    rating: 4.6,
-    lessons: 28,
-    duration: "5 hours 10 mins",
-    comments: 112,
-    level: "Intermediate",
-    price: 49,
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
     category: "Data Science",
     featured: true,
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "balancing-productivity",
+    title: "Balancing Productivity and Creativity",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 7,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Productivity",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "money-management",
+    title: "Mastering Money Management",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Business",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "startup-success",
+    title: "From Idea to Startup Success",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 7,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Business",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: "acoustic-guitar",
@@ -489,4 +560,21 @@ export const courseCategories = [
 
 export function getCourseById(id: string) {
   return courses.find((course) => course.id === id);
+}
+
+export function getCreatorById(id: string): Creator {
+  const norm = id.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return (
+    creators.find(
+      (c) => c.id.toLowerCase().replace(/[^a-z0-9]/g, "") === norm
+    ) || creators[0]
+  );
+}
+
+export function getCoursesByAuthor(author: string): Course[] {
+  const norm = author.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return courses.filter((c) => {
+    const cNorm = c.author.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cNorm.includes(norm) || norm.includes(cNorm);
+  });
 }

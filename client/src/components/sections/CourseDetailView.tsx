@@ -2,9 +2,11 @@
 
 import { useState, type FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ChartNoAxesColumnIncreasing,
   Check,
+  Clock,
   Play,
   Share2,
   Star,
@@ -302,7 +304,10 @@ const SidebarCard: FC<{ course: Course }> = ({ course }) => {
       <hr className="border-0 border-t border-[#EAECEF] my-7" />
 
       {/* 7. Creator */}
-      <div className="flex items-center gap-3.5">
+      <Link
+        href="/creators/purepearl-studio"
+        className="group/creator flex items-center gap-3.5 transition-opacity hover:opacity-90 cursor-pointer"
+      >
         <div className="relative size-14 rounded-full overflow-hidden shrink-0 border border-[#E6E8EC]">
           <Image
             src="/images/creator-purepearl.png"
@@ -312,26 +317,26 @@ const SidebarCard: FC<{ course: Course }> = ({ course }) => {
           />
         </div>
         <div>
-          <h5 className="text-[17px] font-bold text-[#12141A] leading-tight">
+          <h5 className="text-[17px] font-bold text-[#12141A] leading-tight group-hover/creator:text-[#003BE2] transition-colors">
             PurePearl Studio
           </h5>
           <p className="text-sm text-[#6D7380] font-normal mt-0.5">
             Professional Creator
           </p>
         </div>
-      </div>
+      </Link>
 
       <p className="mt-4 text-sm leading-relaxed text-[#5C6370] font-normal">
         Ready to Dive In? Enroll Now and Start Building Your Digital Future!
       </p>
 
       <div>
-        <button
-          type="button"
+        <Link
+          href="/creators/purepearl-studio"
           className="mt-4 inline-flex items-center justify-center rounded-full border border-[#D1D5DB] px-6 py-2.5 text-sm font-medium text-[#12141A] hover:bg-neutral-50 active:scale-95 transition-all cursor-pointer"
         >
           See Full Profile
-        </button>
+        </Link>
       </div>
     </div>
   );
@@ -361,10 +366,9 @@ export const CourseDetailView: FC<CourseDetailViewProps> = ({ course }) => {
     : REVIEWS;
 
   return (
-    <div className="relative min-h-screen bg-white text-[#12141A]">
-      <div className="absolute top-0 inset-x-0 h-170 sm:h-180 lg:h-187.5 bg-hero-grid pointer-events-none z-0" />
-
-      <div className="relative z-10">
+    <div className="min-h-screen bg-white text-[#12141A]">
+      {/* Hero Section */}
+      <section className="bg-hero-grid text-white pb-24">
         <Navbar />
 
         <div className="mx-auto w-11/12 lg:w-10/12 pt-6 sm:pt-8 lg:pt-10">
@@ -378,9 +382,12 @@ export const CourseDetailView: FC<CourseDetailViewProps> = ({ course }) => {
               </p>
               <p className="mt-3 text-sm text-white/80">
                 by{" "}
-                <span className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-hover cursor-pointer">
+                <Link
+                  href="/creators/purepearl-studio"
+                  className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-hover cursor-pointer"
+                >
                   {course.author}
-                </span>
+                </Link>
               </p>
 
               <div className="mt-5 flex flex-wrap items-center gap-2.5 sm:gap-3">
@@ -415,30 +422,43 @@ export const CourseDetailView: FC<CourseDetailViewProps> = ({ course }) => {
             </div>
           </div>
 
-          <div className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_370px] xl:grid-cols-[minmax(0,1fr)_390px] gap-8 lg:gap-10 items-start pb-20">
-            <div className="flex flex-col gap-8 sm:gap-10 min-w-0">
-              <div className="group relative aspect-video w-full overflow-hidden rounded-3xl bg-neutral-900 border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.22)]">
-                <Image
-                  src="/images/larki.png"
-                  alt={course.title}
-                  fill
-                  priority
-                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 100vw, 750px"
-                />
+          {/* Video Preview & Sidebar Row - DIRECTLY INSIDE HERO SECTION */}
+          <div className="mt-8 sm:mt-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_370px] xl:grid-cols-[minmax(0,1fr)_390px] gap-8 lg:gap-10 items-start">
+            <div className="group relative aspect-video w-full overflow-hidden rounded-3xl">
+              <Image
+                src="/images/larki.png"
+                alt={course.title}
+                fill
+                priority
+                className="object-cover "
+                sizes="(max-width: 1024px) 100vw, 750px"
+              />
 
-                <button
-                  type="button"
-                  onClick={() => setIsVideoModalOpen(true)}
-                  aria-label="Play course preview video"
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[22px] sm:rounded-3xl bg-[#4A3B32]/45 backdrop-blur-md border border-white/25 p-2.5 sm:p-3.5 shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer"
-                >
-                  <div className="flex size-12 sm:size-14 items-center justify-center rounded-full bg-white shadow-md">
-                    <Play className="size-5 sm:size-6 fill-[#7A6B63] text-[#7A6B63] translate-x-0.5" />
-                  </div>
-                </button>
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(true)}
+                aria-label="Play course preview video"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-[22px] sm:rounded-3xl bg-[#4A3B32]/45 backdrop-blur-md border border-white/25 p-2.5 sm:p-3.5 shadow-2xl transition-all duration-300 group-hover:scale-105 cursor-pointer"
+              >
+                <div className="flex size-14 sm:size-16 items-center justify-center rounded-full bg-white shadow-lg transition-transform duration-300 group-hover:scale-105">
+                  <Play className="size-6 sm:size-7 fill-[#003BE2] text-[#003BE2] translate-x-0.5" />
+                </div>
+              </button>
+            </div>
+
+            <div className="hidden lg:block relative z-30">
+              <div className="absolute top-0 left-0 w-full">
+                <SidebarCard course={course} />
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section className="bg-white pt-8 sm:pt-10 pb-20">
+        <div className="mx-auto w-11/12 lg:w-10/12">
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_370px] xl:grid-cols-[minmax(0,1fr)_390px] gap-8 lg:gap-10 items-start">
+            <div className="flex flex-col gap-8 sm:gap-10 min-w-0">
               <div className="lg:hidden">
                 <SidebarCard course={course} />
               </div>
@@ -758,12 +778,11 @@ export const CourseDetailView: FC<CourseDetailViewProps> = ({ course }) => {
               )}
             </div>
 
-            <div className="hidden lg:block lg:sticky lg:top-6 z-30">
-              <SidebarCard course={course} />
-            </div>
+            {/* Right column spacer for desktop layout to maintain grid alignment */}
+            <div className="hidden lg:block min-h-[750px]" aria-hidden="true" />
           </div>
         </div>
-      </div>
+      </section>
 
       {isVideoModalOpen && (
         <div

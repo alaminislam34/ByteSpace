@@ -7,3 +7,4 @@ export * from "./CreatorBanner";
 export * from "./Testimonials";
 export * from "./CourseCatalog";
 export * from "./CourseDetailView";
+export * from "./CreatorProfileView";
