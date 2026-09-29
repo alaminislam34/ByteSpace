@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState, type FC, type FormEvent } from "react";
+import { useMemo, useRef, useState, type FC, type FormEvent } from "react";
 import {
   ChartNoAxesColumnIncreasing,
   ChevronDown,
@@ -10,8 +10,16 @@ import {
   Shapes,
 } from "lucide-react";
 import { Navbar } from "@/components/layout";
-import { CategoryPill, CourseCard, FilterDropdown, type FilterOption } from "@/components/ui";
+import {
+  CategoryPill,
+  CourseCard,
+  FilterDropdown,
+  Pagination,
+  type FilterOption,
+} from "@/components/ui";
 import { courses, courseCategories } from "@/data/courses";
+
+const ITEMS_PER_PAGE = 6;
 
 const PRICE_OPTIONS: FilterOption[] = [
   { label: "All prices", value: "all" },
@@ -54,6 +62,9 @@ export const CourseCatalog: FC = () => {
   const [category, setCategory] = useState("Featured");
   const [sort, setSort] = useState("relevant");
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const catalogSectionRef = useRef<HTMLElement | null>(null);
+
   const visibleCourses = useMemo(() => {
     const term = query.trim().toLowerCase();
     const filtered = courses.filter((course) => {
@@ -78,6 +89,26 @@ export const CourseCatalog: FC = () => {
     return filtered;
   }, [query, scope, price, level, category, sort]);
 
+  const filterKey = `${query}-${scope}-${price}-${level}-${category}-${sort}`;
+  const [prevFilterKey, setPrevFilterKey] = useState(filterKey);
+  if (filterKey !== prevFilterKey) {
+    setPrevFilterKey(filterKey);
+    setCurrentPage(1);
+  }
+
+  const totalPages = Math.max(1, Math.ceil(visibleCourses.length / ITEMS_PER_PAGE));
+  const safeCurrentPage = Math.min(Math.max(1, currentPage), totalPages);
+
+  const paginatedCourses = useMemo(() => {
+    const start = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
+    return visibleCourses.slice(start, start + ITEMS_PER_PAGE);
+  }, [visibleCourses, safeCurrentPage]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    catalogSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   const sortLabel = SORT_OPTIONS.find((option) => option.value === sort)?.label ?? "Most relevant";
 
   const resetFilters = () => {
@@ -86,6 +117,7 @@ export const CourseCatalog: FC = () => {
     setLevel("all");
     setCategory("Featured");
     setSort("relevant");
+    setCurrentPage(1);
   };
 
   return (
@@ -133,7 +165,7 @@ export const CourseCatalog: FC = () => {
         </div>
       </section>
 
-      <section className="bg-white py-12 text-[#12141A] lg:py-16">
+      <section ref={catalogSectionRef} className="bg-white py-12 text-[#12141A] lg:py-16">
         <div className="mx-auto flex w-11/12 flex-col gap-6 lg:w-10/12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex flex-wrap items-center gap-3">
@@ -185,11 +217,23 @@ export const CourseCatalog: FC = () => {
           </div>
 
           {visibleCourses.length > 0 ? (
-            <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-2 lg:grid-cols-3">
-              {visibleCourses.map((course) => (
-                <CourseCard key={course.id} href={`/courses/${course.id}`} {...course} />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 gap-6 pt-6 md:grid-cols-2 lg:grid-cols-3">
+                {paginatedCourses.map((course) => (
+                  <CourseCard key={course.id} href={`/courses/${course.id}`} {...course} />
+                ))}
+              </div>
+
+              {totalPages > 1 && (
+                <div className="pt-10 sm:pt-14">
+                  <Pagination
+                    currentPage={safeCurrentPage}
+                    totalPages={totalPages}
+                    onPageChange={handlePageChange}
+                  />
+                </div>
+              )}
+            </>
           ) : (
             <div className="flex flex-col items-center gap-4 py-20 text-center">
               <p className="text-[#6D7380]">No courses match these filters.</p>

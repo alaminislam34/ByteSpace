@@ -6,3 +6,4 @@ export * from "./ProfessionalGrowth";
 export * from "./CreatorBanner";
 export * from "./Testimonials";
 export * from "./CourseCatalog";
+export * from "./CourseDetailView";

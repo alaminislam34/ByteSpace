@@ -40,7 +40,7 @@ export const Footer: FC = () => {
   };
 
   return (
-    <footer className="bg-white text-[#12141A]">
+    <footer className="border-t border-[#E6E8EC] bg-white text-[#12141A]">
       <div className="mx-auto w-11/12 py-14 lg:w-10/12 lg:py-20">
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(34rem,1.05fr)] lg:gap-12">
           <div>

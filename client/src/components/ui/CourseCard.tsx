@@ -1,7 +1,6 @@
 import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { FaStar } from "react-icons/fa";
 

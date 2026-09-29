@@ -14,3 +14,4 @@ export * from "./CourseCard";
 export * from "./MetricCard";
 export * from "./TestimonialCard";
 export * from "./BrandLogos";
+export * from "./Pagination";

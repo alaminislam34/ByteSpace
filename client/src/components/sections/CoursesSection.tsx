@@ -8,7 +8,7 @@ export const CoursesSection: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("Featured");
   const visibleCourses =
     selectedCategory === "Featured"
-      ? courses.filter((course) => course.featured)
+      ? courses.filter((course) => course.featured).slice(0, 6)
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
