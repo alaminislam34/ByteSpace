@@ -72,7 +72,7 @@ export const FilterDropdown: FC<FilterDropdownProps> = ({
           role="listbox"
           aria-label={label}
           className={cn(
-            "absolute top-full z-40 mt-2 max-h-72 min-w-52 overflow-y-auto rounded-2xl border border-[#ECEEF2] bg-white p-1.5 shadow-[0_16px_40px_rgba(15,23,42,0.12)]",
+            "absolute top-full z-40 mt-2 max-h-72 min-w-52 max-w-[calc(100vw-2.5rem)] overflow-y-auto rounded-2xl border border-[#ECEEF2] bg-white p-1.5 shadow-[0_16px_40px_rgba(15,23,42,0.12)]",
             align === "right" ? "right-0" : "left-0"
           )}
         >

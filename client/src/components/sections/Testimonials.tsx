@@ -1,5 +1,5 @@
 import { type FC } from "react";
-import { TestimonialCard } from "@/components/ui";
+import { TestimonialCard, SectionTitle, SectionDescription } from "@/components/ui";
 
 const TESTIMONIALS = [
   {
@@ -31,22 +31,22 @@ const TESTIMONIALS = [
 export const Testimonials: FC = () => {
   return (
     <section className="relative overflow-hidden bg-[#F7F8FB] py-16 sm:py-20 lg:py-24">
-      <div className="pointer-events-none absolute -top-16 right-0 h-[36rem] w-[78%] bg-[radial-gradient(ellipse_at_80%_8%,#E4F78A_0%,#EEF8B8_32%,transparent_68%)]" />
+      <div className="pointer-events-none absolute -top-16 right-0 h-144 w-[78%] bg-[radial-gradient(ellipse_at_80%_8%,#E4F78A_0%,#EEF8B8_32%,transparent_68%)]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-72 w-[42%] bg-[radial-gradient(ellipse_at_0%_100%,#E4E9F8_0%,transparent_72%)]" />
 
       <div className="relative mx-auto flex w-11/12 flex-col gap-12 lg:w-10/12 lg:gap-16">
         <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-16">
-          <h2 className="font-poppins text-4xl font-bold leading-[1.12] tracking-[-0.03em] text-[#12141A] lg:text-[44px]">
+          <SectionTitle>
             Discover What Our
             <br />
             Community Is Saying
-          </h2>
-          <p className="text-[15px] leading-[1.75] text-[#6A7180] lg:pt-1 lg:text-base">
+          </SectionTitle>
+          <SectionDescription className="lg:pt-1">
             At ByteSpace, our vibrant community of learners and creators is at the heart of what we
             do. Hear directly from those who have experienced the transformative journey of learning
             and creating on our platform. Explore testimonials that reflect the diverse perspectives
             of enthusiastic learners and accomplished creators.
-          </p>
+          </SectionDescription>
         </div>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

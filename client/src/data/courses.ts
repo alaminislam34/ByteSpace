@@ -1,29 +1,6 @@
-export interface Course {
-  id: string;
-  title: string;
-  author: string;
-  rating: number;
-  lessons: number;
-  duration: string;
-  comments: number;
-  level: string;
-  price: number;
-  image: string;
-  category: string;
-  featured?: boolean;
-}
+import type { Course, Creator } from "@/types";
 
-export interface Creator {
-  id: string;
-  name: string;
-  badge: string;
-  role: string;
-  bio1: string;
-  bio2: string;
-  productsCount: number;
-  followersCount: number;
-  avatar: string;
-}
+export type { Course, Creator };
 
 export const creators: Creator[] = [
   {
