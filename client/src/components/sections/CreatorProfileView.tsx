@@ -93,7 +93,7 @@ export const CreatorProfileView: FC<CreatorProfileViewProps> = ({
                   <h1 className="font-poppins text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white">
                     {creator.name}
                   </h1>
-                  <span className="inline-flex items-center rounded-full bg-[#CBFC01] px-3.5 py-1 text-xs font-bold text-[#0B0F19] shadow-sm">
+                  <span className="inline-flex items-center rounded-full bg-primary px-3.5 py-1 text-xs font-bold text-[#0B0F19] shadow-sm">
                     {creator.badge || "Creator"}
                   </span>
                 </div>
@@ -130,7 +130,7 @@ export const CreatorProfileView: FC<CreatorProfileViewProps> = ({
                   "inline-flex items-center gap-2 rounded-full px-7 py-2.5 text-xs sm:text-sm font-bold transition-all shadow-sm active:scale-95 cursor-pointer",
                   isFollowing
                     ? "bg-white text-[#0B0F19] hover:bg-white/90"
-                    : "bg-[#CBFC01] text-[#0B0F19] hover:bg-[#BDEB00]"
+                    : "bg-primary text-[#0B0F19] hover:bg-[#BDEB00]"
                 )}
               >
                 {isFollowing ? (

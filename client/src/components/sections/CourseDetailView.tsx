@@ -778,8 +778,7 @@ export const CourseDetailView: FC<CourseDetailViewProps> = ({ course }) => {
               )}
             </div>
 
-            {/* Right column spacer for desktop layout to maintain grid alignment */}
-            <div className="hidden lg:block min-h-[750px]" aria-hidden="true" />
+            <div className="hidden lg:block min-h-187.5" aria-hidden="true" />
           </div>
         </div>
       </section>
