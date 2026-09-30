@@ -5,12 +5,7 @@ import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AvatarGroup } from "./AvatarGroup";
 
-const STUDENT_AVATARS = [
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&h=96&q=80",
-];
+import { STUDENT_AVATARS } from "@/constants";
 
 export interface CourseCardProps {
   href: string;

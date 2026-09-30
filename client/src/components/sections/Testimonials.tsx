@@ -30,7 +30,7 @@ const TESTIMONIALS = [
 
 export const Testimonials: FC = () => {
   return (
-    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-[72px]">
+    <section className="relative overflow-hidden bg-white py-16 sm:py-20 lg:py-18">
       <div className="pointer-events-none absolute -top-50 -right-200 size-100 sm:size-200 lg:size-300 bg-radial-lime" />
       <div className="pointer-events-none absolute -top-30 right-150 size-100 sm:size-200 lg:size-140 bg-radial-lime opacity-50" />
       <div className="pointer-events-none absolute -bottom-80 -left-80 size-100 sm:size-200 bg-radial-blue opacity-30" />

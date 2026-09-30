@@ -3,6 +3,7 @@
 import { type FormEvent, type FC } from "react";
 import Link from "next/link";
 import { InputField } from "@/components/ui";
+import { ROUTES } from "@/constants";
 import { AuthHeader } from "./AuthHeader";
 
 export const RegisterForm: FC = () => {
@@ -60,7 +61,7 @@ export const RegisterForm: FC = () => {
 
         <p className="mt-auto pt-16 text-center text-sm text-[#8B919A]">
           Already have an account?{" "}
-          <Link href="/signin" className="font-medium text-[#003BE2] hover:underline">
+          <Link href={ROUTES.SIGN_IN} className="font-medium text-[#003BE2] hover:underline">
             Login
           </Link>
         </p>

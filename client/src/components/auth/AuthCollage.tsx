@@ -1,16 +1,8 @@
 import { type FC } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
-import { CourseCard } from "@/components/ui";
-import { cn } from "@/lib/utils";
-
-const AVATARS = [
-  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=96&h=96&q=80",
-  "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=96&h=96&q=80",
-];
+import { CourseCard, AvatarGroup } from "@/components/ui";
+import { STUDENT_AVATARS } from "@/constants";
 
 const FRONT_COURSE = {
   href: "/courses/power-big-data",
@@ -85,23 +77,15 @@ export const AuthCollage: FC = () => {
           (240)
           <Star className="size-3.5 fill-[#003BE2] text-[#003BE2]" aria-hidden="true" />
         </p>
-        <div className="mt-2.5 flex items-center">
-          {AVATARS.map((src, index) => (
-            <span
-              key={src}
-              className={cn(
-                "relative size-8 overflow-hidden rounded-full ring-2 ring-[#D6FB3A]",
-                index > 0 && "-ml-2.5"
-              )}
-              style={{ zIndex: index + 1 }}
-            >
-              <Image src={src} alt="" width={32} height={32} className="size-full object-cover" />
-            </span>
-          ))}
-          <span className="relative z-10 -ml-2.5 flex size-8 items-center justify-center rounded-full bg-[#12141A] text-[10px] font-bold text-white ring-2 ring-[#D6FB3A]">
-            2K+
-          </span>
-        </div>
+        <AvatarGroup
+          avatars={STUDENT_AVATARS}
+          max={5}
+          extra="2K+"
+          size="sm"
+          className="mt-2.5"
+          ringClassName="ring-2 ring-[#D6FB3A]"
+          badgeClassName="bg-[#12141A] text-white text-[10px] ring-2 ring-[#D6FB3A]"
+        />
       </article>
     </div>
   );
