@@ -1,4 +1,4 @@
-# ByteSpace
+# <img src="client/public/images/Vector.png" alt="ByteSpace Logo" width="36" height="36" align="center" /> ByteSpace
 
 ByteSpace is a modern, responsive learning platform and creator ecosystem built following provided Figma specifications. The application focuses on clean component architecture, reusability, type safety, and responsive design across mobile, tablet, and desktop viewports.
 
