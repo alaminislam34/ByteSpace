@@ -19,4 +19,5 @@ export * from "./ProgressBar";
 export * from "./AvatarGroup";
 export * from "./InputField";
 export * from "./ScrollToTop";
+export * from "./GridLines";
 

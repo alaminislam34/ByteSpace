@@ -2,6 +2,7 @@ import { type FC } from "react";
 import { Navbar } from "@/components/layout";
 import {
   CourseHighlightCard,
+  GridLines,
   HappyStudentsCard,
   LearningProgressCard,
   SearchField,
@@ -11,6 +12,7 @@ import Image from "next/image";
 export const HeroSection: FC = () => {
   return (
     <section className="relative min-h-svh w-full overflow-hidden bg-hero-grid flex flex-col justify-between">
+      <GridLines rows={32} />
       <Navbar />
 
       <div className="hidden md:flex absolute top-1/6 z-0 lg:top-1/3 -translate-y-1/3 min-h-10 w-full items-center justify-between pointer-events-none opacity-60 lg:opacity-100">

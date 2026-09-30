@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { Navbar, Footer } from "@/components/layout";
+import { GridLines } from "@/components/ui";
 import { ROUTES } from "@/constants/routes";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col bg-[#003be2]">
       <section className="relative overflow-hidden bg-hero-grid flex flex-col flex-1 pb-16 sm:pb-24 lg:pb-32">
+        <GridLines rows={30} />
         <Navbar />
 
         <div className="relative z-10 mx-auto flex w-11/12 flex-1 flex-col items-center justify-center text-center pt-8 sm:pt-12 lg:pt-16">

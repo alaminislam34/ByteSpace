@@ -2,6 +2,7 @@ import { useState, type FC } from "react";
 import Image from "next/image";
 import { Check } from "lucide-react";
 import { Navbar } from "@/components/layout";
+import { GridLines } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import type { Creator } from "@/data/courses";
 
@@ -26,7 +27,8 @@ export const CreatorHeroHeader: FC<CreatorHeroHeaderProps> = ({
   };
 
   return (
-    <section className="bg-hero-grid text-white pb-14 sm:pb-16 lg:pb-20">
+    <section className="relative overflow-hidden bg-hero-grid text-white pb-14 sm:pb-16 lg:pb-20">
+      <GridLines rows={18} />
       <Navbar />
 
       <div className="mx-auto w-11/12 lg:w-10/12 pt-8 sm:pt-10 lg:pt-12">

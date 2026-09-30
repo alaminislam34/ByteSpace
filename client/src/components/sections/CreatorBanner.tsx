@@ -2,7 +2,7 @@ import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
-import { SectionTitle, SectionDescription } from "@/components/ui";
+import { SectionTitle, SectionDescription, GridLines } from "@/components/ui";
 
 const SHAPES = [
   {
@@ -59,6 +59,7 @@ const SHAPES = [
 export const CreatorBanner: FC = () => {
   return (
     <section className="relative overflow-hidden bg-hero-grid">
+      <GridLines rows={18} />
       {SHAPES.map((shape) => (
         <span
           key={`${shape.src}-${shape.className}`}

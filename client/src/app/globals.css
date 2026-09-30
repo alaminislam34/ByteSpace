@@ -134,20 +134,8 @@ body {
 }
 
 .bg-hero-grid {
-  container-type: inline-size;
   position: relative;
   background-color: #003be2;
-}
-
-.bg-hero-grid::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: calc(100cqw / 12) calc(100cqw / 12);
 }
 
 @utility bg-radial-lime {

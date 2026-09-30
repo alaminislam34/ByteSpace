@@ -1,6 +1,7 @@
 import type { FC, FormEvent } from "react";
 import { ChevronDown, Search } from "lucide-react";
 import { Navbar } from "@/components/layout";
+import { GridLines } from "@/components/ui";
 
 interface CatalogSearchHeroProps {
   query: string;
@@ -16,7 +17,8 @@ export const CatalogSearchHero: FC<CatalogSearchHeroProps> = ({
   onScopeChange,
 }) => {
   return (
-    <section className="bg-hero-grid text-white">
+    <section className="relative overflow-hidden bg-hero-grid text-white">
+      <GridLines rows={16} />
       <div className="relative z-10">
         <Navbar />
         <div className="mx-auto flex w-11/12 flex-col items-center gap-8 pt-4 pb-16 text-center sm:pb-20 lg:w-10/12 lg:pt-6 lg:pb-24">

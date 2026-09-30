@@ -12,6 +12,7 @@ import { Navbar } from "@/components/layout";
 import type { Course } from "@/types";
 import { getCreatorById } from "@/data/courses";
 import { ROUTES } from "@/constants/routes";
+import { GridLines } from "@/components/ui";
 import { CourseSidebarCard } from "./CourseSidebarCard";
 
 interface CourseDetailHeroProps {
@@ -40,7 +41,8 @@ export const CourseDetailHero: FC<CourseDetailHeroProps> = ({
   };
 
   return (
-    <section className="bg-hero-grid text-white pb-24">
+    <section className="relative overflow-hidden bg-hero-grid text-white pb-24">
+      <GridLines rows={22} />
       <Navbar />
 
       <div className="mx-auto w-11/12 lg:w-10/12 pt-6 sm:pt-8 lg:pt-10">
