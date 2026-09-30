@@ -1,0 +1,580 @@
+export interface Course {
+  id: string;
+  title: string;
+  author: string;
+  rating: number;
+  lessons: number;
+  duration: string;
+  comments: number;
+  level: string;
+  price: number;
+  image: string;
+  category: string;
+  featured?: boolean;
+}
+
+export interface Creator {
+  id: string;
+  name: string;
+  badge: string;
+  role: string;
+  bio1: string;
+  bio2: string;
+  productsCount: number;
+  followersCount: number;
+  avatar: string;
+}
+
+export const creators: Creator[] = [
+  {
+    id: "purepearl-studio",
+    name: "PurePearl Studio",
+    badge: "Creator",
+    role: "Passionate UI/UX, Web designer",
+    bio1: "Welcome to the creative world of PurePearl Studio. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together!",
+    bio2: "Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story. Explore the world of creativity with me.",
+    productsCount: 3,
+    followersCount: 12,
+    avatar: "/images/creator-pearl.png",
+  },
+];
+
+export const courses: Course[] = [
+  {
+    id: "figma-basic",
+    title: "Learn Figma from Basic",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "UI/UX Design",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "digital-asset",
+    title: "Build Digital Asset",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Graphic Design",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "power-big-data",
+    title: "the Power of Big Data",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Data Science",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "balancing-productivity",
+    title: "Balancing Productivity and Creativity",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 7,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Productivity",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "money-management",
+    title: "Mastering Money Management",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 17,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Business",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "startup-success",
+    title: "From Idea to Startup Success",
+    author: "purepearl studio",
+    rating: 4.5,
+    lessons: 7,
+    duration: "2 hours 16 mins",
+    comments: 59,
+    level: "Beginner",
+    price: 25,
+    category: "Business",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "acoustic-guitar",
+    title: "Acoustic Guitar Basics",
+    author: "northlane audio",
+    rating: 4.8,
+    lessons: 19,
+    duration: "4 hours 05 mins",
+    comments: 73,
+    level: "Beginner",
+    price: 29,
+    category: "Music",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "watercolor-start",
+    title: "Watercolor for Beginners",
+    author: "studio marigold",
+    rating: 4.4,
+    lessons: 14,
+    duration: "2 hours 50 mins",
+    comments: 41,
+    level: "Beginner",
+    price: 22,
+    category: "Drawing & Painting",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "brand-strategy",
+    title: "Brand Strategy Sprint",
+    author: "halo & co",
+    rating: 4.9,
+    lessons: 12,
+    duration: "1 hour 45 mins",
+    comments: 96,
+    level: "Intermediate",
+    price: 39,
+    category: "Marketing",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "motion-after-effects",
+    title: "Motion Design Essentials",
+    author: "frame theory",
+    rating: 4.6,
+    lessons: 24,
+    duration: "6 hours 20 mins",
+    comments: 67,
+    level: "Intermediate",
+    price: 45,
+    category: "Animation",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "instagram-growth",
+    title: "Instagram Growth Lab",
+    author: "social north",
+    rating: 4.3,
+    lessons: 16,
+    duration: "2 hours 30 mins",
+    comments: 128,
+    level: "Beginner",
+    price: 27,
+    category: "Social Media",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "campaign-ideas",
+    title: "Creative Campaign Ideas",
+    author: "halo & co",
+    rating: 4.5,
+    lessons: 11,
+    duration: "1 hour 55 mins",
+    comments: 38,
+    level: "Beginner",
+    price: 24,
+    category: "Creative Marketing",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "digital-illustration",
+    title: "Digital Illustration Studio",
+    author: "studio marigold",
+    rating: 4.8,
+    lessons: 21,
+    duration: "4 hours 35 mins",
+    comments: 55,
+    level: "Intermediate",
+    price: 36,
+    category: "Digital Illustration",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "short-film-edit",
+    title: "Edit Your First Short Film",
+    author: "reel house",
+    rating: 4.7,
+    lessons: 18,
+    duration: "3 hours 15 mins",
+    comments: 44,
+    level: "Beginner",
+    price: 34,
+    category: "Film & Video",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "paper-crafts",
+    title: "Paper Crafts at Home",
+    author: "maker monday",
+    rating: 4.2,
+    lessons: 9,
+    duration: "1 hour 20 mins",
+    comments: 27,
+    level: "Beginner",
+    price: 18,
+    category: "Crafts",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "freelance-pricing",
+    title: "Freelance Pricing Playbook",
+    author: "purepearl studio",
+    rating: 4.6,
+    lessons: 13,
+    duration: "2 hours 05 mins",
+    comments: 91,
+    level: "Beginner",
+    price: 28,
+    category: "Freelance & Entrepreneurship",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "product-photo",
+    title: "Product Photography",
+    author: "lens & light",
+    rating: 4.4,
+    lessons: 15,
+    duration: "2 hours 40 mins",
+    comments: 33,
+    level: "Beginner",
+    price: 31,
+    category: "Photography",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "focus-systems",
+    title: "Focus Systems for Creators",
+    author: "north desk",
+    rating: 4.5,
+    lessons: 10,
+    duration: "1 hour 30 mins",
+    comments: 62,
+    level: "Beginner",
+    price: 19,
+    category: "Productivity",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "react-for-designers",
+    title: "React for Designers",
+    author: "byte lab",
+    rating: 4.7,
+    lessons: 26,
+    duration: "5 hours 45 mins",
+    comments: 77,
+    level: "Intermediate",
+    price: 42,
+    category: "Web Development",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "weeknight-cooking",
+    title: "Weeknight Cooking",
+    author: "kitchen table",
+    rating: 4.8,
+    lessons: 20,
+    duration: "3 hours 00 mins",
+    comments: 140,
+    level: "Beginner",
+    price: 26,
+    category: "Cooking",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "modern-typography",
+    title: "Modern Typography & Layout",
+    author: "type craft",
+    rating: 4.8,
+    lessons: 18,
+    duration: "3 hours 10 mins",
+    comments: 52,
+    level: "Intermediate",
+    price: 35,
+    category: "Graphic Design",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "nextjs-fullstack",
+    title: "Full-Stack Web Masterclass",
+    author: "byte lab",
+    rating: 4.9,
+    lessons: 32,
+    duration: "8 hours 40 mins",
+    comments: 164,
+    level: "Advanced",
+    price: 55,
+    category: "Web Development",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "mobile-app-ux",
+    title: "Mobile App UX Architecture",
+    author: "purepearl studio",
+    rating: 4.7,
+    lessons: 25,
+    duration: "5 hours 15 mins",
+    comments: 89,
+    level: "Intermediate",
+    price: 44,
+    category: "UI/UX Design",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "3d-blender-intro",
+    title: "3D Modeling in Blender",
+    author: "frame theory",
+    rating: 4.6,
+    lessons: 21,
+    duration: "4 hours 50 mins",
+    comments: 73,
+    level: "Beginner",
+    price: 38,
+    category: "Animation",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "sound-design-film",
+    title: "Cinematic Sound Design",
+    author: "northlane audio",
+    rating: 4.8,
+    lessons: 17,
+    duration: "3 hours 30 mins",
+    comments: 61,
+    level: "Intermediate",
+    price: 42,
+    category: "Music",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "ai-data-science",
+    title: "Machine Learning & AI Basics",
+    author: "purepearl studio",
+    rating: 4.7,
+    lessons: 20,
+    duration: "4 hours 10 mins",
+    comments: 105,
+    level: "Beginner",
+    price: 49,
+    category: "Data Science",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "content-creator-growth",
+    title: "Content Strategy & Growth",
+    author: "social north",
+    rating: 4.5,
+    lessons: 15,
+    duration: "2 hours 45 mins",
+    comments: 94,
+    level: "Beginner",
+    price: 33,
+    category: "Social Media",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "color-theory-artists",
+    title: "Color Theory for Visual Artists",
+    author: "studio marigold",
+    rating: 4.6,
+    lessons: 14,
+    duration: "2 hours 20 mins",
+    comments: 48,
+    level: "Beginner",
+    price: 27,
+    category: "Drawing & Painting",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "b2b-growth-marketing",
+    title: "B2B SaaS Growth & Funnels",
+    author: "halo & co",
+    rating: 4.8,
+    lessons: 19,
+    duration: "3 hours 55 mins",
+    comments: 81,
+    level: "Intermediate",
+    price: 48,
+    category: "Marketing",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "portrait-lighting",
+    title: "Studio Lighting & Portraiture",
+    author: "lens & light",
+    rating: 4.7,
+    lessons: 16,
+    duration: "3 hours 05 mins",
+    comments: 57,
+    level: "Intermediate",
+    price: 39,
+    category: "Photography",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "time-management-remote",
+    title: "Deep Work & Remote Systems",
+    author: "north desk",
+    rating: 4.4,
+    lessons: 11,
+    duration: "1 hour 40 mins",
+    comments: 68,
+    level: "Beginner",
+    price: 21,
+    category: "Productivity",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "artisan-bread-baking",
+    title: "Artisan Sourdough & Baking",
+    author: "kitchen table",
+    rating: 4.9,
+    lessons: 16,
+    duration: "2 hours 55 mins",
+    comments: 118,
+    level: "Beginner",
+    price: 29,
+    category: "Cooking",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "creative-storytelling",
+    title: "Storytelling & Visual Narrative",
+    author: "reel house",
+    rating: 4.6,
+    lessons: 15,
+    duration: "3 hours 10 mins",
+    comments: 46,
+    level: "Intermediate",
+    price: 36,
+    category: "Film & Video",
+    featured: true,
+    image:
+      "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80",
+  },
+];
+
+export const courseCategories = [
+  "Featured",
+  "Music",
+  "Drawing & Painting",
+  "Marketing",
+  "Animation",
+  "Social Media",
+  "UI/UX Design",
+  "Creative Marketing",
+  "Digital Illustration",
+  "Film & Video",
+  "Crafts",
+  "Freelance & Entrepreneurship",
+  "Graphic Design",
+  "Photography",
+  "Productivity",
+  "Web Development",
+  "Data Science",
+  "Cooking",
+];
+
+export function getCourseById(id: string) {
+  return courses.find((course) => course.id === id);
+}
+
+export function getCreatorById(id: string): Creator {
+  const norm = id.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return (
+    creators.find(
+      (c) => c.id.toLowerCase().replace(/[^a-z0-9]/g, "") === norm
+    ) || creators[0]
+  );
+}
+
+export function getCoursesByAuthor(author: string): Course[] {
+  const norm = author.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return courses.filter((c) => {
+    const cNorm = c.author.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return cNorm.includes(norm) || norm.includes(cNorm);
+  });
+}
