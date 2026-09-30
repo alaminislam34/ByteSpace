@@ -1,4 +1,4 @@
-# <img src="client/public/images/Vector.png" alt="ByteSpace Logo" width="28" height="30" align="middle" style="vertical-align: middle; margin-right: 4px;" /> ByteSpace
+# <img src="client/public/images/Vector.png" alt="ByteSpace Logo" width="28" height="30" align="middle" style="vertical-align: middle; margin-right: 4px; margin-bottom: 10px;" /> ByteSpace
 
 ByteSpace is a modern, responsive learning platform and creator ecosystem built following provided Figma specifications. The application focuses on clean component architecture, reusability, type safety, and responsive design across mobile, tablet, and desktop viewports.
 
@@ -82,17 +82,20 @@ client/
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/alaminislam34/ByteSpace.git
    cd ByteSpace/client
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```
 
 3. Start the development server:
+
    ```bash
    pnpm dev
    ```
@@ -102,11 +105,13 @@ client/
 ### Building for Production
 
 To create an optimized production build:
+
 ```bash
 pnpm build
 ```
 
 To run the linter:
+
 ```bash
 pnpm lint
 ```
