@@ -12,6 +12,8 @@ export interface SearchFieldProps {
   defaultValue?: string;
   onSearch?: (query: string) => void;
   className?: string;
+  inputWrapperClassName?: string;
+  inputClassName?: string;
 }
 
 export const SearchField: FC<SearchFieldProps> = ({
@@ -21,6 +23,8 @@ export const SearchField: FC<SearchFieldProps> = ({
   defaultValue,
   onSearch,
   className,
+  inputWrapperClassName,
+  inputClassName,
 }) => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,16 +36,24 @@ export const SearchField: FC<SearchFieldProps> = ({
     <form
       role="search"
       onSubmit={handleSubmit}
-      className={cn("flex w-full items-center gap-3 max-w-xl mx-auto", className)}
+      className={cn("flex w-full items-center gap-3 max-w-xl", className)}
     >
-      <label className="flex h-14 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 rounded-3xl border-0 bg-white px-4 sm:px-5 focus-within:ring-2 focus-within:ring-primary/70">
+      <label
+        className={cn(
+          "flex h-14 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 rounded-3xl border border-transparent bg-white px-4 sm:px-5 focus-within:ring-2 focus-within:ring-primary/70",
+          inputWrapperClassName
+        )}
+      >
         <Search className="size-5 shrink-0 text-shuttle-400" aria-hidden="true" />
         <input
           type="text"
           name={name}
           defaultValue={defaultValue}
           placeholder={placeholder}
-          className="w-full border-0 bg-transparent font-poppins text-sm sm:text-base text-shuttle-900 outline-none placeholder:text-shuttle-400"
+          className={cn(
+            "w-full border-none bg-transparent font-poppins text-sm sm:text-base text-shuttle-900 outline-none placeholder:text-shuttle-400 focus:outline-none focus:border-none focus:ring-0 focus:outline-transparent focus:ring-offset-0",
+            inputClassName
+          )}
         />
       </label>
       <Button

@@ -78,7 +78,7 @@ export const AuthCollage: FC = () => {
         className="pointer-events-none absolute bottom-[10%] left-80 z-20 w-32 object-contain"
       />
 
-      <article className="absolute bottom-0 right-40 z-10 w-60 rounded-2xl bg-[#D6FB3A] p-3.5 text-[#16181D] shadow-[0_16px_36px_rgba(4,16,70,0.2)]">
+      <article className="absolute bottom-0 left-30 xl:right-40 z-10 w-60 rounded-2xl bg-[#D6FB3A] p-3.5 text-[#16181D] shadow-[0_16px_36px_rgba(4,16,70,0.2)]">
         <h3 className="text-sm font-semibold leading-tight">Happy Students</h3>
         <p className="mt-1 flex items-center gap-1 text-xs text-[#3A3D44]">
           <span className="font-medium text-[#16181D]">4.5</span>

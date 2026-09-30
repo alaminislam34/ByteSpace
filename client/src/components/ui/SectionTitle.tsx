@@ -36,7 +36,6 @@ export const SectionTitle: FC<SectionTitleProps> = ({
   const maxWidthClass = isTailwindClass ? maxWidth : undefined;
   const maxWidthStyle = maxWidth && !isTailwindClass ? { maxWidth } : undefined;
 
-  // Backwards compatibility if label or subtitle is provided
   if (label || subtitle) {
     return (
       <div

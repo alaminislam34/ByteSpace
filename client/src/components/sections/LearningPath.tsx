@@ -25,7 +25,7 @@ export const LearningPath: FC = () => {
           {PATHS.map(({ label, icon }) => (
             <div
               key={label}
-              className="flex aspect-square flex-col items-center justify-center gap-2.5 sm:gap-4 rounded-[22px] border border-[#E6E7EB] bg-white p-2.5 sm:px-3"
+              className="flex aspect-square flex-col items-center justify-center gap-2.5 sm:gap-4 rounded-[22px] border border-[#E6E7EB] bg-white px-6 py-9"
             >
               <span className="flex size-11 sm:size-14 items-center justify-center rounded-full bg-[#D4FB20]">
                 <Image src={icon} alt="" width={36} height={36} className="size-7 sm:size-9" />

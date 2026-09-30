@@ -19,3 +19,4 @@ export * from "./Pagination";
 export * from "./StarRating";
 export * from "./ProgressBar";
 export * from "./AvatarGroup";
+export * from "./InputField";
