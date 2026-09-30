@@ -25,7 +25,7 @@ export const StudentGrowthShowcase: FC<StudentGrowthShowcaseProps> = ({
       )}
 
       <Image
-        src="/images/hero-image.png"
+        src="/images/sele.png"
         alt="Student with a laptop and headset"
         width={900}
         height={642}
@@ -33,7 +33,7 @@ export const StudentGrowthShowcase: FC<StudentGrowthShowcaseProps> = ({
         className="pointer-events-none absolute 2xl:right-0 bottom-0 z-10 h-auto max-w-full  2xl:max-w-[85%] object-contain drop-shadow-[0_24px_40px_rgba(15,23,42,0.16)]"
       />
 
-      <LearningProgressCard className="absolute right-2 sm:right-6 lg:w-60 lg:right-0 2xl:right-5 bottom-[24%] sm:bottom-[28%] lg:bottom-[33%] z-20 scale-[0.75] xs:scale-[0.82] sm:scale-95 lg:scale-100 origin-bottom-right shadow-[0_16px_36px_rgba(15,23,42,0.12)] transition-transform" />
+      <LearningProgressCard className="absolute right-2 sm:right-6 lg:w-fit 2xl:w-60 lg:right-0 2xl:right-5 bottom-[24%] sm:bottom-[28%] lg:bottom-[28%] 2xl:bottom-[33%] z-20 scale-[0.75] xs:scale-[0.82] sm:scale-95 lg:scale-100 origin-bottom-right shadow-[0_16px_36px_rgba(15,23,42,0.12)] transition-transform" />
 
       <Image
         src="/images/Frame(1).png"

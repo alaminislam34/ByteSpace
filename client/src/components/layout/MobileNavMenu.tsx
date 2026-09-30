@@ -40,7 +40,8 @@ export const MobileNavMenu: FC<MobileNavMenuProps> = ({
         role="region"
         aria-label="Mobile Navigation Menu"
         className={cn(
-          "absolute top-full inset-x-0 mx-auto w-11/12 z-50 md:hidden mt-2",
+          "fixed top-20 inset-x-0 mx-auto w-11/12 z-50 md:hidden mt-2",
+          "max-h-[calc(100svh-6rem)] overflow-y-auto",
           "transition-all duration-300 ease-out origin-top transform",
           isOpen
             ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"

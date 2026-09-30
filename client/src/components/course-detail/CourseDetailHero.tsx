@@ -41,7 +41,7 @@ export const CourseDetailHero: FC<CourseDetailHeroProps> = ({
   };
 
   return (
-    <section className="relative overflow-hidden bg-hero-grid text-white pb-24">
+    <section className="relative bg-hero-grid text-white pb-24">
       <GridLines rows={22} />
       <Navbar />
 

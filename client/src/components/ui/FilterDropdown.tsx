@@ -50,7 +50,7 @@ export const FilterDropdown: FC<FilterDropdownProps> = ({
   }, [open]);
 
   return (
-    <div ref={rootRef} className={cn("relative", className)}>
+    <div ref={rootRef} className={cn("relative", open ? "z-50" : "z-10", className)}>
       <button
         type="button"
         aria-haspopup="listbox"

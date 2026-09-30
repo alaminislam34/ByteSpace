@@ -34,7 +34,7 @@ export const CreatorGrowthShowcase: FC<CreatorGrowthShowcaseProps> = ({
       />
 
       <Image
-        src="/images/image 2.png"
+        src="/images/meye.png"
         alt="Creator with a tablet and headset"
         width={700}
         height={700}

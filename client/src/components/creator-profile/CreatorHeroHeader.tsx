@@ -27,7 +27,7 @@ export const CreatorHeroHeader: FC<CreatorHeroHeaderProps> = ({
   };
 
   return (
-    <section className="relative overflow-hidden bg-hero-grid text-white pb-14 sm:pb-16 lg:pb-20">
+    <section className="relative bg-hero-grid text-white pb-14 sm:pb-16 lg:pb-20">
       <GridLines rows={18} />
       <Navbar />
 

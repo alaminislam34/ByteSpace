@@ -53,7 +53,7 @@ export const ProfessionalGrowth: FC = () => {
           <StudentGrowthShowcase course={figmaCourse} />
         </div>
 
-        <div className="grid items-center lg:grid-cols-2 lg:gap-16 relative">
+        <div className="grid items-center lg:grid-cols-2 gap-12 lg:gap-16 relative">
           <CreatorGrowthShowcase />
 
           <div className="order-1 max-w-xl space-y-6 lg:order-2">

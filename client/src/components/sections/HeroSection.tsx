@@ -91,25 +91,25 @@ export const HeroSection: FC = () => {
         <SearchField />
       </div>
 
-      <div className="relative z-10 w-full flex-1 flex items-end justify-center min-h-50 sm:min-h-115 lg:min-h-140 mt-4 lg:mt-0">
+      <div className="relative z-10 w-full flex-1 flex items-end justify-center min-h-50 sm:min-h-115 lg:min-h-140 mt-4 lg:mt-0 lg:pt-6">
         <div className="relative z-20 flex items-center justify-center">
-          <LearningProgressCard className="pointer-events-auto absolute right-0 sm:right-3 lg:right-[6%] top-[34%] sm:top-[34%] lg:top-[35%] z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-top-right transition-transform" />
+          <LearningProgressCard className="pointer-events-auto absolute right-6 sm:right-3 lg:right-[6%] top-[34%] sm:top-[34%] lg:top-[35%] z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-top-right transition-transform" />
 
-          <CourseHighlightCard className="pointer-events-auto absolute left-0 sm:left-3 lg:left-[2%] top-[20%] sm:top-[26%] lg:top-[35%] z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-top-left transition-transform" />
+          <CourseHighlightCard className="pointer-events-auto absolute left-6 sm:left-3 lg:left-[2%] top-[20%] sm:top-[26%] lg:top-[35%] z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-top-left transition-transform" />
 
-          <HappyStudentsCard className="pointer-events-auto absolute -left-2 sm:left-2 lg:left-4 2xl:-left-8 bottom-3 sm:bottom-10 lg:bottom-28 z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
+          <HappyStudentsCard className="pointer-events-auto absolute left-6 sm:left-2 lg:left-4 2xl:-left-8 bottom-3 sm:bottom-10 lg:bottom-28 z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
 
           <Image
-            src="/images/hero-image.png"
+            src="/images/sele.png"
             alt="Hero Image"
             width={900}
             height={900}
             priority
-            className="w-88 sm:w-110 md:w-140 lg:w-200 xl:w-215 max-w-none h-auto object-contain select-none pointer-events-none"
+            className="w-100 sm:w-110 md:w-140 lg:w-200 xl:w-215 max-w-none h-auto object-contain select-none pointer-events-none"
           />
         </div>
        
-        <div className="absolute bottom-[-50%] lg:bottom-[-55%] 2xl:bottom-[-80%] z-10 shadow-lg flex items-center justify-center w-full h-full pointer-events-none">
+        <div className="absolute bottom-[-60%] lg:bottom-[-55%] 2xl:bottom-[-80%] z-10 shadow-lg flex items-center justify-center w-full h-full pointer-events-none">
           <div className="relative flex items-center justify-center rounded-full aspect-square border-320 md:border-380 lg:border-400 border-primary w-[78%] mx-auto overflow-hidden"></div>
         </div>
       </div>

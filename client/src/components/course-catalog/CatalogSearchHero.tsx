@@ -17,7 +17,7 @@ export const CatalogSearchHero: FC<CatalogSearchHeroProps> = ({
   onScopeChange,
 }) => {
   return (
-    <section className="relative overflow-hidden bg-hero-grid text-white">
+    <section className="relative bg-hero-grid text-white">
       <GridLines rows={16} />
       <div className="relative z-10">
         <Navbar />

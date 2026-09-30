@@ -41,10 +41,10 @@ export const Navbar = () => {
             alt="ByteSpace logo"
             width={42}
             height={42}
-            className="h-10 w-auto object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
             priority
           />
-          <span className="font-title -mb-3.5 text-3xl font-bold tracking-tight text-white">
+          <span className="font-title -mb-3.5 text-2xl sm:text-3xl font-bold tracking-tight text-white">
             ByteSpace
           </span>
         </Link>
