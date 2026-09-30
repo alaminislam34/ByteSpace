@@ -17,8 +17,8 @@ const HomePage: FC = () => {
       <CoursesSection />
       <LearningPath />
       <ProfessionalGrowth />
-      <Testimonials />
       <CreatorBanner />
+      <Testimonials />
     </main>
   );
 };

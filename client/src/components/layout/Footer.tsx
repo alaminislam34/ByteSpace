@@ -3,6 +3,7 @@
 import { type FormEvent, type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { SearchField } from "../ui";
 
 const LINK_COLUMNS = [
   [
@@ -61,27 +62,13 @@ export const Footer: FC = () => {
               Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
 
-            <form
-              onSubmit={handleSubscribe}
-              className="mt-6 flex max-w-lg flex-col gap-3 sm:flex-row sm:items-center"
-            >
-              <label className="min-w-0 flex-1">
-                <span className="sr-only">Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="Enter your email"
-                  className="h-13 w-full rounded-full border border-[#E3E5EA] bg-white px-5 text-sm text-[#12141A] outline-none placeholder:text-[#A0A4AD] focus:border-[#12141A]"
-                />
-              </label>
-              <button
-                type="submit"
-                className="h-13 shrink-0 rounded-full bg-primary px-8 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover"
-              >
-                Search
-              </button>
-            </form>
+           <div className="flex justify-start py-2 items-start">
+            <SearchField
+              placeholder="Enter your email"
+              buttonLabel="Subscribe"
+              inputWrapperClassName="border-[#CED0D3]"
+            />
+           </div>
 
             <p className="mt-5 text-[13px] leading-relaxed text-[#8A9099]">
               By subscribing, you agree to our{" "}

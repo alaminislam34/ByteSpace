@@ -7,49 +7,49 @@ import { SectionTitle, SectionDescription } from "@/components/ui";
 const SHAPES = [
   {
     src: "/images/Frame(1).png",
-    className: "hero-float absolute -top-[8%] -left-[7%] w-[400px]",
+    className: "hero-float absolute -top-4 -left-6 sm:-top-[6%] sm:-left-[6%] lg:-top-[8%] lg:-left-[7%] w-24 sm:w-44 lg:w-[400px] opacity-40 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "13s",
     delay: "-2s",
   },
   {
     src: "/images/Frame.png",
-    className: "hero-float-alt absolute top-[7%] left-[15%] w-[200px]",
+    className: "hero-float-alt hidden sm:inline-block absolute sm:top-[5%] sm:left-[8%] lg:top-[7%] lg:left-[15%] sm:w-28 lg:w-[200px] opacity-50 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "15s",
     delay: "-4s",
   },
   {
     src: "/images/Cone(3).png",
-    className: "hero-float absolute top-[4%] right-[15%] w-[200px]",
+    className: "hero-float hidden sm:inline-block absolute sm:top-[3%] sm:right-[8%] lg:top-[4%] lg:right-[15%] sm:w-28 lg:w-[200px] opacity-50 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "12s",
     delay: "-6s",
   },
   {
     src: "/images/Cone.png",
-    className: "hero-float-alt absolute top-[2%] -right-[10%] w-[400px]",
+    className: "hero-float-alt absolute -top-4 -right-6 sm:top-[2%] sm:-right-[8%] lg:top-[2%] lg:-right-[10%] w-24 sm:w-44 lg:w-[400px] opacity-40 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain [filter:grayscale(1)_brightness(1.85)_contrast(0.8)]",
     duration: "16s",
     delay: "-3s",
   },
   {
     src: "/images/Mask Group(white).png",
-    className: "hero-float absolute top-[46%] -left-[3%] w-[200px] -rotate-30",
+    className: "hero-float hidden md:inline-block absolute md:top-[46%] md:-left-[2%] lg:top-[46%] lg:-left-[3%] md:w-32 lg:w-[200px] -rotate-30 opacity-60 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "14s",
     delay: "-5s",
   },
   {
     src: "/images/Cone(2).png",
-    className: "hero-float-alt absolute -bottom-[22%] left-[4%] w-[400px]",
+    className: "hero-float-alt absolute -bottom-6 -left-6 sm:-bottom-[16%] sm:left-[2%] lg:-bottom-[22%] lg:left-[4%] w-28 sm:w-52 lg:w-[400px] opacity-40 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "15s",
     delay: "-1s",
   },
   {
     src: "/images/Frame(1).png",
-    className: "hero-float absolute right-[1%] -bottom-[12%] w-[400px] -rotate-45",
+    className: "hero-float absolute -bottom-6 -right-6 sm:bottom-[1%] sm:right-[1%] lg:right-[1%] lg:-bottom-[12%] w-28 sm:w-52 lg:w-[400px] -rotate-45 opacity-40 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "13s",
     delay: "-7s",
@@ -75,13 +75,20 @@ export const CreatorBanner: FC = () => {
         </span>
       ))}
 
-      <div className="relative z-10 mx-auto flex min-h-128 w-full flex-col items-center justify-center px-5 py-16 text-center sm:min-h-104 sm:px-8 lg:min-h-[34vw] lg:py-20 space-y-6 md:space-y-8 lg:space-y-10">
-        <SectionTitle align="center" className="text-[#F5F5F6] tracking-[-0.1%]">
+      <div className="relative z-10 mx-auto flex min-h-100 w-full flex-col items-center justify-center px-4 py-14 text-center sm:min-h-104 sm:px-8 sm:py-16 lg:min-h-[34vw] lg:py-20 space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10">
+        <SectionTitle
+          align="center"
+          className="text-[#F5F5F6] tracking-[-0.1%] text-2xl sm:text-3xl lg:text-[44px]"
+        >
           Unlock Your Potential as a
-          <br />
-          Creator with ByteSpace
+          <br className="hidden sm:inline" />
+          {" "}Creator with ByteSpace
         </SectionTitle>
-        <SectionDescription align="center" maxWidth="max-w-5xl" className="text-[#F5F5F6] leading-[160%]">
+        <SectionDescription
+          align="center"
+          maxWidth="max-w-5xl"
+          className="text-[#F5F5F6] leading-[160%] text-xs sm:text-sm md:text-base lg:text-lg px-2 sm:px-0"
+        >
           Experience the collaboration of numerous creators and an expanding selection of courses.
           Register now and become a part of a community comprising over 10,000 local and
           international creators. Utilize our Course Editor, and showcase your expertise by
@@ -89,7 +96,7 @@ export const CreatorBanner: FC = () => {
         </SectionDescription>
         <Link
           href={ROUTES.JOIN}
-          className="mt-6 inline-flex h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover sm:mt-8 sm:h-11 sm:px-6"
+          className="mt-4 sm:mt-6 inline-flex h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover sm:h-11 sm:px-6"
         >
           Join as Creator
         </Link>
