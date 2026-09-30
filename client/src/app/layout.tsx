@@ -20,14 +20,14 @@ const satoshiHref =
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+    <html lang="en" className={`${poppins.variable} h-full antialiased`} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="" />
         <link rel="stylesheet" href={clashDisplayHref} />
         <link rel="stylesheet" href={satoshiHref} />
       </head>
-      <body className="min-h-full font-body bg-[#003be2] text-white">
+      <body suppressHydrationWarning className="min-h-full font-body bg-[#003be2] text-white">
         <Providers>{children}</Providers>
       </body>
     </html>

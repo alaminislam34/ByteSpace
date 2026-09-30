@@ -6,6 +6,7 @@ import {
   CardFooter,
   CardHeader,
   SectionTitle,
+  SectionDescription,
   SectionWrapper,
   Badge,
 } from "@/components/ui";
@@ -34,13 +35,17 @@ const FEATURES = [
 export const FeaturesSection: FC = () => {
   return (
     <SectionWrapper id="services" padding="xl" background="muted">
-      <SectionTitle
-        label="Best Practices"
-        title="Engineering Standards"
-        subtitle="Every component, hook, and layout is built with strict line limits, zero bloat, and maximum readability."
-        align="center"
-        className="mb-14"
-      />
+      <div className="mb-14 flex flex-col items-center text-center gap-3">
+        <span className="inline-block rounded-full bg-primary/20 px-3.5 py-1 text-label-xs font-bold uppercase tracking-wider text-foreground">
+          Best Practices
+        </span>
+        <SectionTitle align="center">
+          Engineering Standards
+        </SectionTitle>
+        <SectionDescription align="center" maxWidth="max-w-2xl">
+          Every component, hook, and layout is built with strict line limits, zero bloat, and maximum readability.
+        </SectionDescription>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {FEATURES.map((item) => {

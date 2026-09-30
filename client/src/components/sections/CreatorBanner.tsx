@@ -1,6 +1,8 @@
 import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ROUTES } from "@/constants/routes";
+import { SectionTitle, SectionDescription } from "@/components/ui";
 
 const SHAPES = [
   {
@@ -74,19 +76,19 @@ export const CreatorBanner: FC = () => {
       ))}
 
       <div className="relative z-10 mx-auto flex min-h-128 w-full flex-col items-center justify-center px-5 py-16 text-center sm:min-h-104 sm:px-8 lg:min-h-[34vw] lg:py-20 space-y-6 md:space-y-8 lg:space-y-10">
-        <h2 className="font-poppins text-4xl font-semibold leading-[120%] tracking-[-0.1%] text-[#F5F5F6] lg:text-[44px]">
+        <SectionTitle align="center" className="text-[#F5F5F6] tracking-[-0.1%]">
           Unlock Your Potential as a
           <br />
           Creator with ByteSpace
-        </h2>
-        <p className="max-w-5xl mx-auto leading-[160%] text-[#F5F5F6]">
+        </SectionTitle>
+        <SectionDescription align="center" maxWidth="max-w-5xl" className="text-[#F5F5F6] leading-[160%]">
           Experience the collaboration of numerous creators and an expanding selection of courses.
           Register now and become a part of a community comprising over 10,000 local and
           international creators. Utilize our Course Editor, and showcase your expertise by
           publishing your finest course on the ByteSpace Course Library.
-        </p>
+        </SectionDescription>
         <Link
-          href="/join"
+          href={ROUTES.JOIN}
           className="mt-6 inline-flex h-10 items-center rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-hover sm:mt-8 sm:h-11 sm:px-6"
         >
           Join as Creator

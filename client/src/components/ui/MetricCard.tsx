@@ -1,5 +1,6 @@
 import { type FC, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { ProgressBar } from "./ProgressBar";
 
 export interface MetricCardProps {
   label: string;
@@ -24,14 +25,14 @@ export const MetricCard: FC<MetricCardProps> = ({
       <p className="mt-1 text-[11px] leading-none text-white/60">{caption}</p>
       <div className="mt-2 flex flex-col gap-2">
         <p className="font-poppins text-2xl font-semibold leading-none tracking-[-0.03em]">{value}</p>
-     <span>
-     {badge}
-     </span>
+        <span>{badge}</span>
       </div>
       {progress !== undefined && (
-        <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-white/25">
-          <div className="h-full rounded-full bg-[#D4FB20]" style={{ width: `${progress}%` }} />
-        </div>
+        <ProgressBar
+          value={progress}
+          className="mt-3 h-1.5 bg-white/25"
+          colorClassName="bg-[#D4FB20]"
+        />
       )}
     </article>
   );

@@ -1,15 +1,15 @@
 export const ROUTES = {
   HOME: "/",
-  ABOUT: "/#about",
-  SERVICES: "/#services",
-  PORTFOLIO: "/#portfolio",
-  CONTACT: "/#contact",
+  COURSES: "/courses",
+  CREATORS: "/creators",
+  SIGN_IN: "/signin",
+  JOIN: "/join",
+  COURSE_DETAIL: (id: string) => `/courses/${id}`,
+  CREATOR_PROFILE: (id: string) => `/creators/${id}`,
 } as const;
 
 export const NAV_LINKS = [
   { label: "Home", href: ROUTES.HOME },
-  { label: "About", href: ROUTES.ABOUT },
-  { label: "Services", href: ROUTES.SERVICES },
-  { label: "Portfolio", href: ROUTES.PORTFOLIO },
-  { label: "Contact", href: ROUTES.CONTACT },
+  { label: "Courses", href: ROUTES.COURSES },
+  { label: "Creators", href: ROUTES.CREATORS },
 ] as const;

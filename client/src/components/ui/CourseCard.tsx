@@ -1,8 +1,9 @@
 import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { FaStar } from "react-icons/fa";
+import { AvatarGroup } from "./AvatarGroup";
 
 const STUDENT_AVATARS = [
   "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=96&h=96&q=80",
@@ -96,7 +97,7 @@ export const CourseCard: FC<CourseCardProps> = ({
           </h3>
           <div className="flex shrink-0 items-center gap-1 text-lg font-medium leading-[160%] text-[#4F4F4F]">
             <span>{rating.toFixed(1)}</span>
-            <FaStar className={cn("size-5", starClassName)} />
+            <Star className={cn("size-5 fill-current", starClassName)} />
           </div>
         </div>
 
@@ -110,23 +111,12 @@ export const CourseCard: FC<CourseCardProps> = ({
             {level}
           </span>
 
-          <div className="flex items-center">
-            {studentAvatars.slice(0, 4).map((src, index) => (
-              <span
-                key={src}
-                className={cn(
-                  "relative size-8 overflow-hidden rounded-full ring-2 ring-white",
-                  index > 0 && "-ml-2.5"
-                )}
-                style={{ zIndex: index + 1 }}
-              >
-                <Image src={src} alt="" width={32} height={32} className="size-full object-cover" />
-              </span>
-            ))}
-            <span className="relative z-10 -ml-2.5 flex size-8 items-center justify-center rounded-full bg-[#D4FB20] text-[11px] font-bold text-[#1A1C20] ring-2 ring-white">
-              {extraStudentsCount}
-            </span>
-          </div>
+          <AvatarGroup
+            avatars={studentAvatars}
+            max={4}
+            extra={extraStudentsCount}
+            size="sm"
+          />
         </div>
 
         <p className="">
