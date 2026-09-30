@@ -7,6 +7,12 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "ByteSpace - Get Access to Hundreds Courses Available",
   description: "Unlock your creativity, gain valuable knowledge, and grow your business with our wide range of courses.",
+  icons: {
+    icon: [
+      { url: "/images/Vector.png", type: "image/png" },
+    ],
+    apple: "/images/Vector.png",
+  },
 };
 
 interface RootLayoutProps {

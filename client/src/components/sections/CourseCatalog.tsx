@@ -125,7 +125,7 @@ export const CourseCatalog: FC = () => {
         onScopeChange={setScope}
       />
 
-      <section ref={catalogSectionRef} className="bg-white py-12 text-[#12141A] lg:py-16">
+      <section ref={catalogSectionRef} className="bg-white py-12 text-[#12141A] lg:py-18">
         <div className="mx-auto flex w-11/12 flex-col gap-6 lg:w-10/12">
           <CatalogFilterBar
             price={price}

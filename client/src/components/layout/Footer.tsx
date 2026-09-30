@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, type FC } from "react";
+import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SearchField } from "../ui";
@@ -36,13 +36,10 @@ const LEGAL_LINKS = [
 ];
 
 export const Footer: FC = () => {
-  const handleSubscribe = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
 
   return (
     <footer className="border-t border-[#E6E8EC] bg-white text-[#12141A]">
-      <div className="mx-auto w-11/12 py-14 lg:w-10/12 lg:py-20">
+      <div className="mx-auto w-11/12 py-14 lg:w-10/12 lg:py-18">
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(34rem,1.05fr)] lg:gap-12">
           <div>
             <Link href="/" className="inline-flex items-center gap-2">

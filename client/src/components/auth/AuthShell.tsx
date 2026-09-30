@@ -1,6 +1,7 @@
 import { type FC, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { ROUTES } from "@/constants";
 import { AuthCollage } from "./AuthCollage";
 
 interface AuthShellProps {
@@ -13,7 +14,7 @@ export const AuthShell: FC<AuthShellProps> = ({ title, description, children }) 
   return (
     <main className="relative min-h-svh overflow-hidden bg-hero-grid text-white">
       <div className="relative z-10 mx-auto flex min-h-svh w-11/12 flex-col py-6 lg:w-10/12 lg:py-8">
-        <Link href="/" className="inline-flex w-fit" aria-label="ByteSpace home">
+        <Link href={ROUTES.HOME} className="inline-flex w-fit" aria-label="ByteSpace home">
         <Image
             src="/images/Vector.png"
             alt="ByteSpace logo"

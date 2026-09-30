@@ -52,11 +52,11 @@ export const CourseDetailHero: FC<CourseDetailHeroProps> = ({
             <p className="mt-2.5 text-sm sm:text-base font-normal text-white/90">
               Unlock the Power of Digital Creation with Expert Guidance
             </p>
-            <p className="mt-3 text-sm text-white/80">
+            <p className="mt-3 text-sm text-white/80 font-medium">
               by{" "}
               <Link
                 href={ROUTES.CREATOR_PROFILE(creator.id)}
-                className="font-semibold text-primary underline underline-offset-4 transition-colors hover:text-primary-hover cursor-pointer"
+                className="text-primary cursor-pointer"
               >
                 {course.author}
               </Link>

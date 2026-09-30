@@ -8,6 +8,8 @@ export interface AvatarGroupProps {
   extra?: string;
   size?: "sm" | "md";
   className?: string;
+  ringClassName?: string;
+  badgeClassName?: string;
 }
 
 export const AvatarGroup: FC<AvatarGroupProps> = ({
@@ -16,6 +18,8 @@ export const AvatarGroup: FC<AvatarGroupProps> = ({
   extra,
   size = "sm",
   className,
+  ringClassName = "ring-2 ring-white",
+  badgeClassName,
 }) => {
   const visibleAvatars = avatars.slice(0, max);
   const isSm = size === "sm";
@@ -28,7 +32,7 @@ export const AvatarGroup: FC<AvatarGroupProps> = ({
           className={cn(
             "relative overflow-hidden rounded-full",
             isSm
-              ? "size-8 ring-2 ring-white"
+              ? cn("size-8", ringClassName)
               : "w-10.75 aspect-square",
             index > 0 && (isSm ? "-ml-2.5" : "-ml-4")
           )}
@@ -48,8 +52,9 @@ export const AvatarGroup: FC<AvatarGroupProps> = ({
           className={cn(
             "relative z-10 flex items-center justify-center rounded-full bg-[#D4FB20] font-bold text-[#1A1C20]",
             isSm
-              ? "-ml-2.5 size-8 ring-2 ring-white text-[11px]"
-              : "-ml-4 w-10.75 aspect-square text-xs text-[#242528]"
+              ? cn("-ml-2.5 size-8 text-[11px]", ringClassName)
+              : "-ml-4 w-10.75 aspect-square text-xs text-[#242528]",
+            badgeClassName
           )}
         >
           {extra}

@@ -4,6 +4,7 @@ import { type FormEvent, type FC } from "react";
 import Link from "next/link";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 import { InputField } from "@/components/ui";
+import { ROUTES } from "@/constants";
 import { AuthHeader } from "./AuthHeader";
 
 export const SignInForm: FC = () => {
@@ -67,7 +68,7 @@ export const SignInForm: FC = () => {
 
         <p className="mt-auto pt-10 text-center text-sm text-[#8B919A]">
           New user?{" "}
-          <Link href="/join" className="font-medium text-[#003BE2] hover:underline">
+          <Link href={ROUTES.JOIN} className="font-medium text-[#003BE2] hover:underline">
             Create an account
           </Link>
         </p>

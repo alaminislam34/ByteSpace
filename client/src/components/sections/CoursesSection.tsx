@@ -12,7 +12,7 @@ export const CoursesSection: FC = () => {
       : courses.filter((course) => course.category === selectedCategory);
 
   return (
-    <section className="w-full bg-white py-20 lg:py-28 text-foreground">
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-18 text-foreground">
       <div className="mx-auto w-11/12 lg:w-10/12 flex flex-col gap-10.5">
         <SectionHeader
           title={"Discover Your Passion,\nBuild Your Skills"}

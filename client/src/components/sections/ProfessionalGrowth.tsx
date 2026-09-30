@@ -22,7 +22,7 @@ const figmaCourse = getCourseById("figma-basic");
 
 export const ProfessionalGrowth: FC = () => {
   return (
-    <section className="relative overflow-hidden bg-[#F6F7FB] py-20">
+    <section className="relative overflow-hidden bg-[#F6F7FB] py-16 sm:py-20 lg:py-18">
       <div className="pointer-events-none absolute left-35 -top-10 size-100 rounded-full bg-[#E8F9A8] blur-[100px]" />
       <div className="pointer-events-none absolute -left-10 bottom-0 size-72 rounded-full bg-[#DDF58A] blur-[100px]" />
       <div className="pointer-events-none absolute z-10 -right-10 -bottom-10 rounded-full blur-[300px] size-100 aspect-square bg-[#003BE2]/20 border border-black" />

@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import Link from "next/link";
-import { ChevronRight, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 import { ROUTES } from "@/constants/routes";
@@ -66,14 +66,6 @@ export const MobileNavMenu: FC<MobileNavMenuProps> = ({
                   )}
                 >
                   <span>{item.label}</span>
-                  <ChevronRight
-                    className={cn(
-                      "size-4 transition-transform duration-200",
-                      isActive
-                        ? "text-primary translate-x-0.5"
-                        : "text-white/40 group-hover:text-white/80 group-hover:translate-x-0.5"
-                    )}
-                  />
                 </Link>
               );
             })}

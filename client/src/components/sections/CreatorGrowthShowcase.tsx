@@ -39,7 +39,7 @@ export const CreatorGrowthShowcase: FC<CreatorGrowthShowcaseProps> = ({
         width={700}
         height={700}
         priority
-        className="pointer-events-none absolute top-0 left-1/2 sm:left-[55%] lg:left-0 -translate-x-1/2 sm:-translate-x-1/4 lg:translate-x-0 z-20 h-full w-auto sm:max-w-none"
+        className="pointer-events-none absolute top-0 left-1/2 sm:left-[55%] lg:left-5 -translate-x-1/2 sm:-translate-x-1/4 lg:translate-x-0 z-20 h-full w-auto sm:max-w-none"
       />
 
       <Image
@@ -47,10 +47,10 @@ export const CreatorGrowthShowcase: FC<CreatorGrowthShowcaseProps> = ({
         alt=""
         width={180}
         height={180}
-        className="pointer-events-none absolute top-[12%] sm:top-[14%] right-2 sm:right-6 lg:left-[50%] z-25 h-auto w-16 sm:w-20 lg:w-24"
+        className="pointer-events-none absolute top-[12%] sm:top-[15%] -right-3 sm:right-6 lg:left-[38%] z-25 h-auto w-40 lg:w-50"
       />
 
-      <HappyStudentsCard className="absolute bottom-4 sm:bottom-8 lg:bottom-10 left-1/4 sm:left-[30%] lg:left-[32%] z-30 shadow-[0_16px_36px_rgba(15,23,42,0.12)] scale-[0.78] xs:scale-[0.85] sm:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
+      <HappyStudentsCard className="absolute bottom-20 sm:bottom-8 lg:bottom-15 max-w-fit -right-12 sm:left-[30%] lg:left-[38%] z-30 shadow-[0_16px_36px_rgba(15,23,42,0.12)] scale-[0.78] xs:scale-[0.85] sm:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
     </div>
   );
 };

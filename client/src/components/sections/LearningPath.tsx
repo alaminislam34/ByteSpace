@@ -13,7 +13,7 @@ const PATHS = [
 
 export const LearningPath: FC = () => {
   return (
-    <section className="w-full bg-white py-20 lg:py-28">
+    <section className="w-full bg-white py-16 sm:py-20 lg:py-18">
       <div className="mx-auto flex w-11/12 flex-col items-center gap-14 lg:w-10/12 ">
         <SectionHeader
           title="Explore Diverse Learning Paths at Bytespace"
