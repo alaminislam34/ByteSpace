@@ -43,7 +43,7 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-60 aspect-square object-contain"
+            className="w-16 lg:w-40 2xl:w-60 aspect-square object-contain"
           />
         </span>
         <span className="hero-float inline-block" style={{ animationDuration: "11s", animationDelay: "-2s" }}>
@@ -52,7 +52,7 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-60 aspect-square object-contain"
+            className="w-16 lg:w-40 2xl:w-60 aspect-square object-contain"
           />
         </span>
       </div>
@@ -64,7 +64,7 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-sm aspect-square object-contain"
+            className="w-16 lg:w-60 2xl:w-sm aspect-square object-contain"
           />
         </span>
         <span className="hero-float-alt inline-block" style={{ animationDuration: "16s", animationDelay: "-4s" }}>
@@ -73,7 +73,7 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-sm aspect-square object-contain"
+            className="w-16 lg:w-60 2xl:w-sm aspect-square object-contain"
           />
         </span>
       </div>
@@ -97,7 +97,7 @@ export const HeroSection: FC = () => {
 
           <CourseHighlightCard className="pointer-events-auto absolute left-0 sm:left-3 lg:left-[2%] top-[20%] sm:top-[26%] lg:top-[35%] z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-top-left transition-transform" />
 
-          <HappyStudentsCard className="pointer-events-auto absolute -left-2 sm:left-2 lg:-left-8 bottom-3 sm:bottom-10 lg:bottom-28 z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
+          <HappyStudentsCard className="pointer-events-auto absolute -left-2 sm:left-2 lg:left-4 2xl:-left-8 bottom-3 sm:bottom-10 lg:bottom-28 z-30 scale-[0.65] xs:scale-[0.72] sm:scale-85 md:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
 
           <Image
             src="/images/hero-image.png"
@@ -109,7 +109,7 @@ export const HeroSection: FC = () => {
           />
         </div>
        
-        <div className="absolute bottom-[-80%] z-10 shadow-lg flex items-center justify-center w-full h-full pointer-events-none">
+        <div className="absolute bottom-[-50%] lg:bottom-[-55%] 2xl:bottom-[-80%] z-10 shadow-lg flex items-center justify-center w-full h-full pointer-events-none">
           <div className="relative flex items-center justify-center rounded-full aspect-square border-320 md:border-380 lg:border-400 border-primary w-[78%] mx-auto overflow-hidden"></div>
         </div>
       </div>

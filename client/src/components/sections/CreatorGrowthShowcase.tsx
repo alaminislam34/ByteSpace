@@ -47,7 +47,7 @@ export const CreatorGrowthShowcase: FC<CreatorGrowthShowcaseProps> = ({
         alt=""
         width={180}
         height={180}
-        className="pointer-events-none absolute top-[12%] sm:top-[15%] -right-3 sm:right-6 lg:left-[38%] z-25 h-auto w-40 lg:w-50"
+        className="pointer-events-none absolute top-[12%] sm:top-[15%] -right-3 sm:right-6 lg:left-[54%] 2xl:left-[38%] z-25 h-auto w-40 lg:w-50"
       />
 
       <HappyStudentsCard className="absolute bottom-20 sm:bottom-8 lg:bottom-15 max-w-fit -right-12 sm:left-[30%] lg:left-[38%] z-30 shadow-[0_16px_36px_rgba(15,23,42,0.12)] scale-[0.78] xs:scale-[0.85] sm:scale-95 lg:scale-100 origin-bottom-left transition-transform" />
