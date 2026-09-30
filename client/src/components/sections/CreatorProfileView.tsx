@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, type FC } from "react";
-import { Footer } from "@/components/layout";
 import { CourseCard } from "@/components/ui/CourseCard";
 import {
   CreatorHeroHeader,

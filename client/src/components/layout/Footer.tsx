@@ -1,6 +1,6 @@
 "use client";
 
-import { type FormEvent, type FC } from "react";
+import { type FC } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { SearchField } from "../ui";
@@ -36,9 +36,6 @@ const LEGAL_LINKS = [
 ];
 
 export const Footer: FC = () => {
-  const handleSubscribe = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-  };
 
   return (
     <footer className="border-t border-[#E6E8EC] bg-white text-[#12141A]">
