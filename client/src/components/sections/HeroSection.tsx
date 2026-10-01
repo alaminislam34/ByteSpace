@@ -24,11 +24,11 @@ export const HeroSection: FC = () => {
     }
   };
   return (
-    <section className="relative min-h-svh w-full overflow-hidden bg-hero-grid flex flex-col justify-between">
+    <section className="relative min-h-90dvh lg:min-h-svh w-full overflow-hidden bg-hero-grid flex flex-col justify-between">
       <GridLines rows={32} />
       <Navbar />
 
-      <div className="hidden md:flex absolute top-1/6 z-0 lg:top-1/3 -translate-y-1/3 min-h-10 w-full items-center justify-between pointer-events-none opacity-60 lg:opacity-100">
+      <div className="hidden md:flex absolute top-1/6 z-0 lg:top-1/3 -translate-y-1/3 min-h-10 w-full items-center justify-between pointer-events-none opacity-60 md:opacity-100">
         <span className="hero-float inline-block -ml-16 lg:-ml-40" style={{ animationDuration: "12s" }}>
           <Image
             src={"/images/Frame(1).png"}
@@ -49,14 +49,14 @@ export const HeroSection: FC = () => {
         </span>
       </div>
 
-      <div className="hidden md:flex absolute top-[55%] lg:top-3/5 -translate-y-3/5 min-h-10 w-11/12 md:w-10/12 lg:w-9/12 mx-auto left-1/2 -translate-x-1/2 items-center justify-between pointer-events-none opacity-60 lg:opacity-100">
+      <div className="hidden md:flex absolute top-[55%] lg:top-3/5 -translate-y-3/5 min-h-10 w-11/12 md:w-10/12 lg:w-9/12 mx-auto left-1/2 -translate-x-1/2 items-center justify-between pointer-events-none opacity-60 md:opacity-100">
         <span className="hero-float-alt inline-block" style={{ animationDuration: "15s", animationDelay: "-5s" }}>
           <Image
             src={"/images/fram(white).png"}
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-40 2xl:w-60 aspect-square object-contain"
+            className="w-16 md:w-30 lg:w-40 2xl:w-60 aspect-square object-contain"
           />
         </span>
         <span className="hero-float inline-block" style={{ animationDuration: "11s", animationDelay: "-2s" }}>
@@ -65,19 +65,19 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-40 2xl:w-60 aspect-square object-contain"
+            className="w-16 md:w-30 lg:w-40 2xl:w-60 aspect-square object-contain"
           />
         </span>
       </div>
 
-      <div className="hidden md:flex absolute bottom-40 lg:bottom-20 z-20 min-h-10 w-11/12 mx-auto left-1/2 -translate-x-1/2 items-center justify-between pointer-events-none opacity-60 lg:opacity-100">
+      <div className="hidden md:flex absolute bottom-40 lg:bottom-10 2xl:bottom-20 z-20 min-h-10 w-full 2xl:w-11/12 mx-auto left-1/2 -translate-x-1/2 items-center justify-between pointer-events-none opacity-60 md:opacity-100">
         <span className="hero-float inline-block" style={{ animationDuration: "13s", animationDelay: "-6s" }}>
           <Image
             src={"/images/Cone(white).png"}
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-60 2xl:w-sm aspect-square object-contain"
+            className="w-16 md:w-40 lg:w-70 2xl:w-sm aspect-square object-contain"
           />
         </span>
         <span className="hero-float-alt inline-block" style={{ animationDuration: "16s", animationDelay: "-4s" }}>
@@ -86,7 +86,7 @@ export const HeroSection: FC = () => {
             alt=""
             width={500}
             height={500}
-            className="w-16 lg:w-60 2xl:w-sm aspect-square object-contain"
+            className="w-16 md:w-40 lg:w-70 2xl:w-sm aspect-square object-contain"
           />
         </span>
       </div>
@@ -118,12 +118,12 @@ export const HeroSection: FC = () => {
             width={900}
             height={900}
             priority
-            className="w-100 sm:w-110 md:w-140 lg:w-200 xl:w-215 max-w-none h-auto object-contain select-none pointer-events-none"
+            className="w-100 sm:w-110 md:w-140 lg:w-180 xl:w-200 2xl:w-215 max-w-none h-auto object-contain select-none pointer-events-none"
           />
         </div>
        
         <div className="absolute bottom-[-60%] lg:bottom-[-55%] 2xl:bottom-[-80%] z-10 shadow-lg flex items-center justify-center w-full h-full pointer-events-none">
-          <div className="relative flex items-center justify-center rounded-full aspect-square border-320 md:border-380 lg:border-400 border-primary w-[78%] mx-auto overflow-hidden"></div>
+          <div className="relative flex items-center justify-center rounded-full aspect-square border-320 md:border-380 lg:border-300 2xl:border-400 border-primary w-[85%] lg:w-[78%] 2xl:w-[78%] mx-auto overflow-hidden"></div>
         </div>
       </div>
     </section>

@@ -46,8 +46,25 @@ export const CoursesSection: FC = () => {
           </Link>
         </div>
 
-        {/* Desktop / Tablet View: 3 Rows as per Figma */}
-        <div className="hidden md:flex flex-col items-center gap-4 max-w-5xl px-2 mx-auto">
+        <div className="hidden md:flex xl:hidden flex-wrap items-center justify-center gap-3.5 max-w-4xl px-2 mx-auto">
+          {CATEGORIES.map((cat) => (
+            <CategoryPill
+              key={cat}
+              label={cat}
+              isActive={selectedCategory === cat}
+              onClick={() => setSelectedCategory(cat)}
+            />
+          ))}
+          <Link
+            href="/courses"
+            className="text-secondary font-semibold text-xs sm:text-sm px-3 py-2 hover:underline cursor-pointer"
+          >
+            + More
+          </Link>
+        </div>
+
+        {/* Large Desktop (xl+) View: Exact 3 Rows as per Figma */}
+        <div className="hidden xl:flex flex-col items-center gap-4 max-w-5xl px-2 mx-auto">
           {CATEGORY_ROWS.map((row, rowIndex) => (
             <div
               key={rowIndex}

@@ -15,7 +15,7 @@ export const BrandLogos: FC<{ className?: string }> = ({ className }) => {
   return (
     <>
       {/* Desktop view */}
-      <div className={cn("hidden md:flex w-11/12 mx-auto items-center justify-between gap-8", className)}>
+      <div className={cn("hidden lg:flex w-11/12 mx-auto items-center justify-between gap-8", className)}>
         {BRANDS.map((src) => (
           <Image
             key={src}
@@ -28,9 +28,9 @@ export const BrandLogos: FC<{ className?: string }> = ({ className }) => {
         ))}
       </div>
 
-      {/* Mobile auto-scrolling slider */}
-      <div className={cn("md:hidden relative w-full overflow-hidden marquee-mask", className)}>
-        <div className="flex w-max animate-marquee items-center gap-8 py-1">
+      {/* Mobile & Tablet auto-scrolling slider */}
+      <div className={cn("lg:hidden relative w-full overflow-hidden marquee-mask", className)}>
+        <div className="flex w-max animate-marquee items-center gap-8 md:gap-12 py-1">
           {MOBILE_LOGOS.map((src, index) => (
             <div key={`${src}-${index}`} className="shrink-0">
               <Image
@@ -38,7 +38,7 @@ export const BrandLogos: FC<{ className?: string }> = ({ className }) => {
                 alt="Brand logo"
                 width={680}
                 height={164}
-                className="h-8 w-auto object-contain opacity-85"
+                className="h-8 md:h-10 w-auto object-contain opacity-85"
               />
             </div>
           ))}

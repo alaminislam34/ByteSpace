@@ -3,53 +3,54 @@ import Image from "next/image";
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 import { SectionTitle, SectionDescription, GridLines } from "@/components/ui";
+import { cn } from "@/lib/utils";
 
 const SHAPES = [
   {
     src: "/images/Frame(1).png",
-    className: "hero-float absolute -top-4 -left-6 sm:-top-[6%] sm:-left-[6%] lg:-top-[8%] lg:-left-[7%] w-24 sm:w-44 lg:w-[320px] 2xl:w-[400px] opacity-80 sm:opacity-80 lg:opacity-100",
+    className: "hero-float absolute -top-6 -left-6 sm:-top-[6%] sm:-left-[6%] lg:-top-[8%] lg:-left-[7%] w-20 sm:w-44 lg:w-[320px] 2xl:w-[400px] opacity-70 sm:opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "13s",
     delay: "-2s",
   },
   {
     src: "/images/Frame.png",
-    className: "hero-float-alt hidden sm:inline-block absolute sm:top-[5%] sm:left-[8%] lg:top-[7%] lg:left-[15%] sm:w-28 lg:w-[120px] 2xl:w-[200px] opacity-10 sm:opacity-80 lg:opacity-100",
+    className: "hero-float-alt hidden lg:inline-block absolute lg:top-[7%] lg:left-[15%] lg:w-[120px] 2xl:w-[200px] opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "15s",
     delay: "-4s",
   },
   {
     src: "/images/Cone(3).png",
-    className: "hero-float hidden sm:inline-block absolute sm:top-[3%] sm:right-[8%] lg:top-[4%] lg:right-[15%] sm:w-28 lg:w-[120px] 2xl:w-[200px] opacity-10 sm:opacity-80 lg:opacity-100",
+    className: "hero-float hidden lg:inline-block absolute lg:top-[4%] lg:right-[15%] lg:w-[120px] 2xl:w-[200px] opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "12s",
     delay: "-6s",
   },
   {
     src: "/images/Cone.png",
-    className: "hero-float-alt absolute -top-4 -right-6 sm:top-[2%] sm:-right-[8%] lg:top-[2%] lg:-right-[10%] w-24 sm:w-44 lg:w-[320px] 2xl:w-[400px] opacity-80 sm:opacity-80 lg:opacity-100",
+    className: "hero-float-alt absolute -top-6 -right-6 sm:top-[2%] sm:-right-[8%] lg:top-[2%] lg:-right-[10%] w-20 sm:w-44 lg:w-[320px] 2xl:w-[400px] opacity-70 sm:opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain [filter:grayscale(1)_brightness(1.85)_contrast(0.8)]",
     duration: "16s",
     delay: "-3s",
   },
   {
     src: "/images/Mask Group(white).png",
-    className: "hero-float hidden md:inline-block absolute md:top-[46%] md:-left-[2%] lg:top-[46%] lg:-left-[3%] md:w-32 lg:w-[120px] 2xl:w-[200px] -rotate-30 opacity-10 lg:opacity-100",
+    className: "hero-float hidden lg:inline-block absolute lg:top-[46%] lg:-left-[3%] lg:w-[120px] 2xl:w-[200px] -rotate-30 opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "14s",
     delay: "-5s",
   },
   {
     src: "/images/Cone(2).png",
-    className: "hero-float-alt absolute -bottom-6 -left-6 sm:-bottom-[16%] sm:left-[2%] lg:-bottom-[22%] lg:left-[4%] w-28 sm:w-52 lg:w-[270px] 2xl:w-[400px] opacity-80 sm:opacity-80 lg:opacity-100",
+    className: "hero-float-alt absolute -bottom-6 -left-6 sm:-bottom-[16%] sm:left-[2%] lg:-bottom-[22%] lg:left-[4%] w-24 sm:w-52 lg:w-[270px] 2xl:w-[400px] opacity-70 sm:opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "15s",
     delay: "-1s",
   },
   {
     src: "/images/Frame(1).png",
-    className: "hero-float absolute -bottom-6 -right-6 sm:bottom-[1%] sm:right-[1%] lg:right-[1%] lg:-bottom-[23%] w-28 sm:w-52 lg:w-[270px] 2xl:w-[400px] -rotate-45 opacity-80 sm:opacity-80 lg:opacity-100",
+    className: "hero-float absolute -bottom-6 -right-6 sm:bottom-[1%] md:-bottom-10 sm:right-[1%] lg:right-[1%] lg:-bottom-[23%] w-24 sm:w-52 lg:w-[270px] 2xl:w-[400px] -rotate-45 opacity-70 sm:opacity-80 lg:opacity-100 z-0",
     imgClassName: "h-auto w-full object-contain",
     duration: "13s",
     delay: "-7s",
@@ -63,7 +64,7 @@ export const CreatorBanner: FC = () => {
       {SHAPES.map((shape) => (
         <span
           key={`${shape.src}-${shape.className}`}
-          className={`pointer-events-none inline-block ${shape.className}`}
+          className={cn("pointer-events-none", shape.className)}
           style={{ animationDuration: shape.duration, animationDelay: shape.delay }}
         >
           <Image
