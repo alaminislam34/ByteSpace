@@ -1,8 +1,11 @@
 "use client";
 
 import { useState, type FC } from "react";
+import Link from "next/link";
 import { SectionHeader, CategoryPill, CourseCard } from "@/components/ui";
 import { courses, courseCategories as CATEGORIES } from "@/data/courses";
+
+const MOBILE_CATEGORIES = CATEGORIES.slice(0, 5);
 
 const CATEGORY_ROWS = [
   CATEGORIES.slice(0, 8),
@@ -25,7 +28,26 @@ export const CoursesSection: FC = () => {
           description="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
         />
 
-        <div className="flex flex-col items-center gap-4 max-w-5xl px-2 mx-auto">
+        {/* Mobile View: Compact (Top 5 categories + More) */}
+        <div className="flex md:hidden flex-wrap items-center justify-center gap-3 max-w-sm px-2 mx-auto">
+          {MOBILE_CATEGORIES.map((cat) => (
+            <CategoryPill
+              key={cat}
+              label={cat}
+              isActive={selectedCategory === cat}
+              onClick={() => setSelectedCategory(cat)}
+            />
+          ))}
+          <Link
+            href="/courses"
+            className="text-secondary font-semibold text-xs sm:text-sm px-3 py-2 hover:underline cursor-pointer"
+          >
+            + More
+          </Link>
+        </div>
+
+        {/* Desktop / Tablet View: 3 Rows as per Figma */}
+        <div className="hidden md:flex flex-col items-center gap-4 max-w-5xl px-2 mx-auto">
           {CATEGORY_ROWS.map((row, rowIndex) => (
             <div
               key={rowIndex}
@@ -40,12 +62,12 @@ export const CoursesSection: FC = () => {
                 />
               ))}
               {rowIndex === CATEGORY_ROWS.length - 1 && (
-                <button
-                  type="button"
+                <Link
+                  href="/courses"
                   className="text-secondary font-semibold text-xs sm:text-sm px-3 py-2 hover:underline cursor-pointer"
                 >
                   + More
-                </button>
+                </Link>
               )}
             </div>
           ))}
