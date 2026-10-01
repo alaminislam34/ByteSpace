@@ -34,7 +34,7 @@ export const Navbar = () => {
 
   return (
     <header className="relative z-50 w-full h-20 md:h-25 lg:h-30 flex items-center">
-      <div className="mx-auto flex w-10/12 items-center justify-between">
+      <div className="mx-auto flex w-11/12 lg:w-10/12 items-center justify-between">
         <Link href={ROUTES.HOME} className="flex items-center gap-2.5 pb-3">
           <Image
             src="/images/Vector.png"
