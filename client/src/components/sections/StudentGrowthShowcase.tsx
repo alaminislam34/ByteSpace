@@ -14,7 +14,7 @@ export const StudentGrowthShowcase: FC<StudentGrowthShowcaseProps> = ({
 }) => {
   return (
     <div
-      className={`relative w-10/12 mx-auto lg:w-full h-110 xs:h-[480px] sm:h-130 lg:h-140 overflow-visible ${className}`}
+      className={`relative w-full sm:w-10/12 mx-auto lg:w-full h-110 xs:h-[480px] sm:h-130 lg:h-140 overflow-visible ${className}`}
     >
       {course && (
         <CourseCard

@@ -11,7 +11,7 @@ export const CreatorGrowthShowcase: FC<CreatorGrowthShowcaseProps> = ({
 }) => {
   return (
     <div
-      className={`relative order-2 mx-auto w-10/12 lg:w-full h-110 xs:h-[480px] sm:h-130 lg:h-140 lg:order-1 overflow-visible ${className}`}
+      className={`relative order-2 mx-auto w-full sm:w-10/12 lg:w-full h-110 xs:h-[480px] sm:h-130 lg:h-140 lg:order-1 overflow-visible ${className}`}
     >
       <MetricCard
         label="Total Revenue"
