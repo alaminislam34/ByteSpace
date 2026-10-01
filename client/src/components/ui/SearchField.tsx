@@ -40,7 +40,7 @@ export const SearchField: FC<SearchFieldProps> = ({
     >
       <label
         className={cn(
-          "flex h-14 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 rounded-3xl border border-transparent bg-white px-4 sm:px-5 focus-within:ring-2 focus-within:ring-primary/70",
+          "flex h-12 lg:h-14 min-w-0 flex-1 items-center gap-2.5 sm:gap-3 rounded-3xl border border-transparent bg-white px-4 sm:px-5 focus-within:ring-2 focus-within:ring-primary/70",
           inputWrapperClassName
         )}
       >
@@ -59,7 +59,7 @@ export const SearchField: FC<SearchFieldProps> = ({
       <Button
         type="submit"
         variant="primary"
-        className="h-14 rounded-3xl px-5 sm:px-8 text-sm sm:text-base shrink-0"
+        className="h-12 lg:h-14 rounded-3xl px-5 sm:px-8 text-sm sm:text-base shrink-0"
       >
         {buttonLabel}
       </Button>

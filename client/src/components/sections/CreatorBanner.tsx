@@ -49,7 +49,7 @@ const SHAPES = [
   },
   {
     src: "/images/Frame(1).png",
-    className: "hero-float absolute -bottom-6 -right-6 sm:bottom-[1%] sm:right-[1%] lg:right-[1%] lg:-bottom-[12%] w-28 sm:w-52 lg:w-[270px] 2xl:w-[400px] -rotate-45 opacity-80 sm:opacity-80 lg:opacity-100",
+    className: "hero-float absolute -bottom-6 -right-6 sm:bottom-[1%] sm:right-[1%] lg:right-[1%] lg:-bottom-[23%] w-28 sm:w-52 lg:w-[270px] 2xl:w-[400px] -rotate-45 opacity-80 sm:opacity-80 lg:opacity-100",
     imgClassName: "h-auto w-full object-contain",
     duration: "13s",
     delay: "-7s",

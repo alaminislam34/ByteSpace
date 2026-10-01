@@ -36,6 +36,12 @@ const CATEGORY_OPTIONS: FilterOption[] = courseCategories.map((category) => ({
   value: category,
 }));
 
+const CATEGORY_ROWS = [
+  courseCategories.slice(0, 8), // Line 1: Featured ... Creative Marketing
+  courseCategories.slice(8, 14), // Line 2: Digital Illustration ... Photography
+  courseCategories.slice(14), // Line 3: Productivity ... Cooking
+];
+
 const SORT_OPTIONS: FilterOption[] = [
   { label: "Most relevant", value: "relevant" },
   { label: "Highest rated", value: "rating" },
@@ -187,16 +193,31 @@ export const CourseCatalog: FC = () => {
 
           <div
             ref={categoryScrollRef}
-            className="-mx-1 relative flex gap-3 overflow-x-auto px-1 pb-2 scrollbar-none [&::-webkit-scrollbar]:hidden scroll-smooth"
+            className="flex flex-col items-center gap-2.5 sm:gap-3 py-1"
           >
-            {courseCategories.map((item) => (
-              <CategoryPill
-                key={item}
-                label={item}
-                isActive={category === item}
-                onClick={() => setCategory(item)}
-                className="shrink-0 whitespace-nowrap px-4 py-2.5"
-              />
+            {CATEGORY_ROWS.map((row, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3"
+              >
+                {row.map((item) => (
+                  <CategoryPill
+                    key={item}
+                    label={item}
+                    isActive={category === item}
+                    onClick={() => setCategory(item)}
+                    className="px-4 py-2.5 text-sm"
+                  />
+                ))}
+                {rowIndex === CATEGORY_ROWS.length - 1 && (
+                  <button
+                    type="button"
+                    className="text-[#003be2] font-semibold text-xs sm:text-sm px-3 py-2 hover:underline cursor-pointer"
+                  >
+                    + More
+                  </button>
+                )}
+              </div>
             ))}
           </div>
 

@@ -4,6 +4,12 @@ import { useState, type FC } from "react";
 import { SectionHeader, CategoryPill, CourseCard } from "@/components/ui";
 import { courses, courseCategories as CATEGORIES } from "@/data/courses";
 
+const CATEGORY_ROWS = [
+  CATEGORIES.slice(0, 8),
+  CATEGORIES.slice(8, 14),
+  CATEGORIES.slice(14),
+];
+
 export const CoursesSection: FC = () => {
   const [selectedCategory, setSelectedCategory] = useState("Featured");
   const visibleCourses =
@@ -19,21 +25,30 @@ export const CoursesSection: FC = () => {
           description="At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety of courses across different fields, from technology to the arts, and make a difference in your career and life."
         />
 
-        <div className="flex flex-wrap items-center justify-center gap-4 max-w-5xl px-2 mx-auto">
-          {CATEGORIES.map((cat) => (
-            <CategoryPill
-              key={cat}
-              label={cat}
-              isActive={selectedCategory === cat}
-              onClick={() => setSelectedCategory(cat)}
-            />
+        <div className="flex flex-col items-center gap-4 max-w-5xl px-2 mx-auto">
+          {CATEGORY_ROWS.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className="flex flex-wrap items-center justify-center gap-4"
+            >
+              {row.map((cat) => (
+                <CategoryPill
+                  key={cat}
+                  label={cat}
+                  isActive={selectedCategory === cat}
+                  onClick={() => setSelectedCategory(cat)}
+                />
+              ))}
+              {rowIndex === CATEGORY_ROWS.length - 1 && (
+                <button
+                  type="button"
+                  className="text-secondary font-semibold text-xs sm:text-sm px-3 py-2 hover:underline cursor-pointer"
+                >
+                  + More
+                </button>
+              )}
+            </div>
           ))}
-          <button
-            type="button"
-            className="text-secondary font-semibold text-xs sm:text-sm px-3 py-2 hover:underline"
-          >
-            + More
-          </button>
         </div>
 
         {visibleCourses.length > 0 ? (

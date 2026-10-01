@@ -69,7 +69,7 @@ export const Footer: FC = () => {
 
             <p className="mt-5 text-[13px] leading-relaxed text-[#8A9099]">
               By subscribing, you agree to our{" "}
-              <Link href="/privacy" className="underline underline-offset-2">
+              <Link href="/privacy" className="">
                 Privacy Policy
               </Link>{" "}
               and consent to receive updates from our company.

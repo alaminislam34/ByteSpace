@@ -21,11 +21,11 @@ export const LearningPath: FC = () => {
           description="At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories."
         />
 
-        <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-5">
+        <div className="grid w-full grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 lg:gap-10">
           {PATHS.map(({ label, icon }) => (
             <div
               key={label}
-              className="flex aspect-square flex-col items-center justify-center gap-2.5 sm:gap-4 rounded-[22px] border border-[#E6E7EB] bg-white px-6 py-9"
+              className="flex flex-col items-center justify-center gap-2.5 sm:gap-4 rounded-[22px] border border-[#E6E7EB] bg-white px-6 py-9"
             >
               <span className="flex size-11 sm:size-14 items-center justify-center rounded-full bg-[#D4FB20]">
                 <Image src={icon} alt="" width={36} height={36} className="size-7 sm:size-9" />
