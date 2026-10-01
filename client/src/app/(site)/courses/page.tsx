@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { CourseCatalog } from "@/components/sections";
 
@@ -9,7 +10,9 @@ export const metadata: Metadata = {
 export default function CoursesPage() {
   return (
     <main>
-      <CourseCatalog />
+      <Suspense fallback={<div className="min-h-screen bg-[#003be2]" />}>
+        <CourseCatalog />
+      </Suspense>
     </main>
   );
 }

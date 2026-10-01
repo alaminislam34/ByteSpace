@@ -18,6 +18,7 @@ export const CategoryPill: FC<CategoryPillProps> = ({
     <button
       type="button"
       onClick={onClick}
+      data-active={isActive ? "true" : undefined}
       className={cn(
         "inline-flex items-center justify-center rounded-full px-4 py-3 text-xs sm:text-sm transition-all duration-200 cursor-pointer select-none leading-[120%] tracking-[0%]",
         isActive

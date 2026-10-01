@@ -1,5 +1,9 @@
+"use client";
+
 import { type FC } from "react";
+import { useRouter } from "next/navigation";
 import { Navbar } from "@/components/layout";
+import { ROUTES } from "@/constants/routes";
 import {
   CourseHighlightCard,
   GridLines,
@@ -10,6 +14,15 @@ import {
 import Image from "next/image";
 
 export const HeroSection: FC = () => {
+  const router = useRouter();
+
+  const handleSearch = (searchQuery: string) => {
+    if (searchQuery.trim()) {
+      router.push(`${ROUTES.COURSES}?q=${encodeURIComponent(searchQuery.trim())}`);
+    } else {
+      router.push(ROUTES.COURSES);
+    }
+  };
   return (
     <section className="relative min-h-svh w-full overflow-hidden bg-hero-grid flex flex-col justify-between">
       <GridLines rows={32} />
@@ -88,7 +101,7 @@ export const HeroSection: FC = () => {
             business with our wide range of courses.
           </p>
         </div>
-        <SearchField />
+        <SearchField onSearch={handleSearch} />
       </div>
 
       <div className="relative z-10 w-full flex-1 flex items-end justify-center min-h-50 sm:min-h-115 lg:min-h-140 mt-4 lg:mt-0 lg:pt-6">

@@ -101,7 +101,7 @@ export const Footer: FC = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-[#6D7380] transition-colors hover:text-[#12141A]"
+                className="text-sm text-[#6D7380] transition-colors hover:text-[#12141A] hover:underline"
               >
                 {link.label}
               </Link>

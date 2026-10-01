@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useRef, useState, type FC } from "react";
+import { useEffect, useMemo, useRef, useState, type FC } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   CategoryPill,
   CourseCard,
@@ -50,8 +51,17 @@ const matchesPrice = (price: number, range: string) => {
 };
 
 export const CourseCatalog: FC = () => {
-  const [query, setQuery] = useState("");
+  const searchParams = useSearchParams();
+  const urlQuery = searchParams.get("q") ?? searchParams.get("search") ?? "";
+  const [query, setQuery] = useState(urlQuery);
+  const [prevUrlQuery, setPrevUrlQuery] = useState(urlQuery);
   const debouncedQuery = useDebounce(query, 300);
+
+  if (urlQuery !== prevUrlQuery) {
+    setPrevUrlQuery(urlQuery);
+    setQuery(urlQuery);
+  }
+
   const [scope, setScope] = useState("courses");
   const [price, setPrice] = useState("all");
   const [level, setLevel] = useState("all");
@@ -60,17 +70,42 @@ export const CourseCatalog: FC = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
   const catalogSectionRef = useRef<HTMLElement | null>(null);
+  const categoryScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!categoryScrollRef.current) return;
+    const container = categoryScrollRef.current;
+    const activePill = container.querySelector<HTMLElement>('[data-active="true"]');
+    if (!activePill) return;
+
+    const containerWidth = container.clientWidth;
+    const pillOffsetLeft = activePill.offsetLeft;
+    const pillWidth = activePill.offsetWidth;
+
+    const targetScrollLeft = pillOffsetLeft - containerWidth / 2 + pillWidth / 2;
+
+    container.scrollTo({
+      left: Math.max(0, targetScrollLeft),
+      behavior: "smooth",
+    });
+  }, [category]);
 
   const visibleCourses = useMemo(() => {
     const term = debouncedQuery.trim().toLowerCase();
+    const normalizedTerm = term.replace(/[^a-z0-9]/g, "");
+
     const filtered = courses.filter((course) => {
       const inCategory =
         category === "Featured" ? Boolean(term) || course.featured : course.category === category;
+      const authorText = course.author.toLowerCase();
       const inSearch =
         !term ||
         (scope === "creators"
-          ? course.author.toLowerCase().includes(term)
-          : `${course.title} ${course.category}`.toLowerCase().includes(term));
+          ? authorText.includes(term) ||
+            authorText.replace(/[^a-z0-9]/g, "").includes(normalizedTerm)
+          : `${course.title} ${course.category} ${course.level ?? ""}`
+              .toLowerCase()
+              .includes(term));
       return (
         inCategory &&
         inSearch &&
@@ -109,6 +144,7 @@ export const CourseCatalog: FC = () => {
 
   const resetFilters = () => {
     setQuery("");
+    setScope("courses");
     setPrice("all");
     setLevel("all");
     setCategory("Featured");
@@ -123,6 +159,12 @@ export const CourseCatalog: FC = () => {
         onQueryChange={setQuery}
         scope={scope}
         onScopeChange={setScope}
+        onSearchSubmit={() => {
+          if (query.trim() && category !== "Featured") {
+            setCategory("Featured");
+          }
+          catalogSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
       />
 
       <section ref={catalogSectionRef} className="bg-white py-12 text-[#12141A] lg:py-18">
@@ -143,7 +185,10 @@ export const CourseCatalog: FC = () => {
             sortLabel={sortLabel}
           />
 
-          <div className="-mx-1 flex gap-3 overflow-x-auto px-1 pb-2 scrollbar-none [&::-webkit-scrollbar]:hidden">
+          <div
+            ref={categoryScrollRef}
+            className="-mx-1 relative flex gap-3 overflow-x-auto px-1 pb-2 scrollbar-none [&::-webkit-scrollbar]:hidden scroll-smooth"
+          >
             {courseCategories.map((item) => (
               <CategoryPill
                 key={item}
@@ -175,7 +220,13 @@ export const CourseCatalog: FC = () => {
             </>
           ) : (
             <div className="flex flex-col items-center gap-4 py-20 text-center">
-              <p className="text-[#6D7380]">No courses match these filters.</p>
+              <p className="text-[#6D7380]">
+                {debouncedQuery.trim()
+                  ? scope === "creators"
+                    ? `No courses found for creator "${debouncedQuery.trim()}".`
+                    : `No courses found matching "${debouncedQuery.trim()}".`
+                  : "No courses match these filters."}
+              </p>
               <button
                 type="button"
                 onClick={resetFilters}
